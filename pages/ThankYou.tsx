@@ -417,7 +417,7 @@ const ThankYou = () => {
             <div className="bg-white border border-gray-150 py-5 rounded-[24px] grid grid-cols-2 md:grid-cols-5 gap-4 text-center text-[9px] font-bold uppercase tracking-wider text-gray-500 shadow-sm px-4">
               <span className="flex items-center justify-center gap-1.5"><Sprout size={13} className="text-[#092813]" /> Authentic Products</span>
               <span className="flex items-center justify-center gap-1.5"><ShieldCheck size={13} className="text-[#092813]" /> Secure Payments</span>
-              <span className="flex items-center justify-center gap-1.5"><Truck size={13} className="text-[#092813]" /> Free Shipping &gt; ₹499</span>
+              <span className="flex items-center justify-center gap-1.5">🚚 FREE Delivery Across India</span>
               <span className="flex items-center justify-center gap-1.5"><Clock size={13} className="text-[#092813]" /> Easy Returns</span>
               <span className="flex items-center justify-center gap-1.5"><Phone size={13} className="text-[#092813]" /> Dedicated Support</span>
             </div>

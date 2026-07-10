@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { PRODUCTS } from '../data';
+import { SEA_BUCKTHORN_FAQS, WHY_CHOOSE_BENEFITS_LEFT, WHY_CHOOSE_BENEFITS_RIGHT, INGREDIENTS_STORY, HOW_IT_WORKS_STEPS, TRUST_PILLARS, CUSTOMER_REVIEWS, KEY_WELLNESS_BENEFITS } from '../productContent';
 import { Product } from '../types';
 import { 
-  Star, Heart, Minus, Plus, CheckCircle, Truck, ShieldCheck, Leaf, 
+  Star, Heart, Minus, Plus, CheckCircle, Truck, ShieldCheck, Leaf,
   FlaskConical, Sparkles, ArrowRight, Clock, Info, Scale, Zap, Droplet, 
   ShoppingBag, Sprout, Play, Shield, MessageCircle, ChevronDown, ChevronLeft, ChevronRight, User, Package, Check,
   ArrowUpDown
@@ -34,7 +35,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
 
   const getInitialSize = () => {
     if (!product) return 'Standard';
-    if (product.id === 'p1') return '900ml';
+    if (product.id === 'p1') return '100ml';
     if (product.id === 'p2') return '60 Caps';
     if (product.id === 'p3') return '100ml';
     if (product.id === 'p4') return '900ml+60cap';
@@ -147,7 +148,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
   useEffect(() => {
     if (product) {
       setMainImage(product.image);
-      if (product.id === 'p1') setSelectedSize('900ml');
+      if (product.id === 'p1') setSelectedSize('100ml');
       else if (product.id === 'p2') setSelectedSize('60 Caps');
       else if (product.id === 'p3') setSelectedSize('100ml');
       else if (product.id === 'p4') setSelectedSize('900ml+60cap');
@@ -336,11 +337,18 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
                 {product.isUpcoming ? 'Coming Soon' : 'Bestseller'}
               </span>
               <h1 className="font-serif text-2xl lg:text-3xl font-bold text-gray-900 leading-tight mt-1">
-                {product.id === 'p1' ? 'Swavalambi Sea Buckthorn Juice' : product.name}
+                {product.name}
               </h1>
               <p className="text-xs text-gray-550 font-sans font-medium">
-                {product.isUpcoming ? 'Under Formulation / Prebooking Active' : (product.id === 'p1' ? 'Premium Diabetes Wellness Support' : product.tagline)}
+                {product.isUpcoming ? 'Under Formulation / Prebooking Active' : product.tagline}
               </p>
+              {product.id === 'p1' && !product.isUpcoming && (
+                <div className="space-y-1 pt-1">
+                  <p className="text-[11px] text-gray-700 font-semibold">✨ Premium Himalayan Superfood for Daily Wellness</p>
+                  <p className="text-[11px] text-gray-700 font-semibold">💪 Supports Immunity • Skin Health • Energy • Heart Wellness</p>
+                  <p className="text-[11px] text-[#092813] font-bold">👉 Start Your Health Journey Today</p>
+                </div>
+              )}
             </div>
 
             {/* Ratings row */}
@@ -398,6 +406,13 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
                     <span>{benefit}</span>
                   </div>
                 ))
+              ) : product.id === 'p1' ? (
+                KEY_WELLNESS_BENEFITS.map((benefit, idx) => (
+                  <div key={idx} className="flex items-center gap-2">
+                    <CheckCircle size={14} className="text-emerald-600 shrink-0" />
+                    <span>{benefit}</span>
+                  </div>
+                ))
               ) : product.id === 'p3' ? (
                 <>
                   <div className="flex items-center gap-2">
@@ -446,7 +461,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
                 <div className="flex gap-3 justify-center">
                   {[
                     { 
-                      label: product.id === 'p1' ? '900ml' 
+                      label: product.id === 'p1' ? '100ml' 
                              : product.id === 'p2' ? '60 Caps' 
                              : product.id === 'p3' ? '100ml' 
                              : product.id === 'p4' ? '900ml+60cap' 
@@ -525,14 +540,29 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
 
           {/* FULL WIDTH ROW: Trust Badges (8 items spanning desktop width) */}
           <div className="lg:col-span-12 border-t border-gray-100 pt-5 mt-4 grid grid-cols-2 sm:grid-cols-4 lg:flex lg:flex-wrap lg:items-center lg:justify-between gap-4 text-[8.5px] lg:text-[9.5px] font-bold text-gray-500 uppercase tracking-widest font-sans text-left">
-            <span className="flex items-center gap-1.5"><Leaf size={12} className="text-[#FE8B00] shrink-0" /> Premium Quality</span>
-            <span className="flex items-center gap-1.5"><ShieldCheck size={12} className="text-[#FE8B00] shrink-0" /> Quality Assured</span>
-            <span className="flex items-center gap-1.5"><FlaskConical size={12} className="text-[#FE8B00] shrink-0" /> Quality Checked</span>
-            <span className="flex items-center gap-1.5"><Sparkles size={12} className="text-[#FE8B00] shrink-0" /> No Side Effects</span>
-            <span className="flex items-center gap-1.5">🌏 Made in India</span>
-            <span className="flex items-center gap-1.5"><Shield size={12} className="text-gray-400 shrink-0" /> Secure Payments</span>
-            <span className="flex items-center gap-1.5"><Clock size={12} className="text-gray-400 shrink-0" /> Easy Returns</span>
-            <span className="flex items-center gap-1.5"><Truck size={12} className="text-gray-400 shrink-0" /> Free Shipping</span>
+            {product.id === 'p1' ? (
+              <>
+                <span className="flex items-center gap-1.5"><Leaf size={12} className="text-[#FE8B00] shrink-0" /> 100% Natural</span>
+                <span className="flex items-center gap-1.5"><ShieldCheck size={12} className="text-[#FE8B00] shrink-0" /> GMP Certified</span>
+                <span className="flex items-center gap-1.5"><FlaskConical size={12} className="text-[#FE8B00] shrink-0" /> Lab Tested</span>
+                <span className="flex items-center gap-1.5"><Sparkles size={12} className="text-[#FE8B00] shrink-0" /> No Side Effects</span>
+                <span className="flex items-center gap-1.5">🌏 Made in India</span>
+                <span className="flex items-center gap-1.5"><Shield size={12} className="text-gray-400 shrink-0" /> Secure Payments</span>
+                <span className="flex items-center gap-1.5"><Clock size={12} className="text-gray-400 shrink-0" /> Easy Returns</span>
+                <span className="flex items-center gap-1.5"><Truck size={12} className="text-gray-400 shrink-0" /> Free Shipping</span>
+              </>
+            ) : (
+              <>
+                <span className="flex items-center gap-1.5"><Leaf size={12} className="text-[#FE8B00] shrink-0" /> Premium Quality</span>
+                <span className="flex items-center gap-1.5"><ShieldCheck size={12} className="text-[#FE8B00] shrink-0" /> Quality Assured</span>
+                <span className="flex items-center gap-1.5"><FlaskConical size={12} className="text-[#FE8B00] shrink-0" /> Quality Checked</span>
+                <span className="flex items-center gap-1.5"><Sparkles size={12} className="text-[#FE8B00] shrink-0" /> No Side Effects</span>
+                <span className="flex items-center gap-1.5">🌏 Made in India</span>
+                <span className="flex items-center gap-1.5"><Shield size={12} className="text-gray-400 shrink-0" /> Secure Payments</span>
+                <span className="flex items-center gap-1.5"><Clock size={12} className="text-gray-400 shrink-0" /> Easy Returns</span>
+                <span className="flex items-center gap-1.5"><Truck size={12} className="text-gray-400 shrink-0" /> Free Shipping</span>
+              </>
+            )}
           </div>
         </div>
 
@@ -571,40 +601,34 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
                 <span className="text-[10px] sm:text-xs">Nourishes Scalp Deeply</span>
               </div>
             </>
-          ) : (
+          ) : product.id === 'p1' ? (
             <>
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 rounded-full bg-[#092813]/10 flex items-center justify-center text-[#092813] shrink-0">
-                  <Leaf size={14} />
+                  <Sprout size={14} />
                 </div>
-                <span className="text-[10px] sm:text-xs">Supports Healthy Sugar Levels</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-[#092813]/10 flex items-center justify-center text-[#092813] shrink-0">
-                  <Scale size={14} />
-                </div>
-                <span className="text-[10px] sm:text-xs">Improves Metabolism</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-[#092813]/10 flex items-center justify-center text-[#092813] shrink-0">
-                  <Zap size={14} />
-                </div>
-                <span className="text-[10px] sm:text-xs">Boosts Energy</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-[#092813]/10 flex items-center justify-center text-[#092813] shrink-0">
-                  <Droplet size={14} />
-                </div>
-                <span className="text-[10px] sm:text-xs">Detoxifies the Body</span>
+                <span className="text-[10px] sm:text-xs">Supports Immunity</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 rounded-full bg-[#092813]/10 flex items-center justify-center text-[#092813] shrink-0">
                   <Sparkles size={14} />
                 </div>
-                <span className="text-[10px] sm:text-xs">Carefully Crafted</span>
+                <span className="text-[10px] sm:text-xs">Skin Health</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full bg-[#092813]/10 flex items-center justify-center text-[#092813] shrink-0">
+                  <Zap size={14} />
+                </div>
+                <span className="text-[10px] sm:text-xs">Energy & Stamina</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full bg-[#092813]/10 flex items-center justify-center text-[#092813] shrink-0">
+                  <Heart size={14} />
+                </div>
+                <span className="text-[10px] sm:text-xs">Heart Wellness</span>
               </div>
             </>
-          )}
+          ) : null}
                {product.isUpcoming ? (
           <section className="bg-white border border-gray-150 rounded-3xl p-6 md:p-10 shadow-sm mt-8 text-center max-w-3xl mx-auto w-full">
             <span className="bg-[#EBF1E6] border border-[#092813]/15 text-[#092813] text-[10px] font-black tracking-widest px-3 py-1 rounded-full uppercase">
@@ -967,49 +991,74 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
           </>
         ) : (
           <>
-            {/* 1. KEY BENEFITS - WHY CHOOSE Sea Buckthorn Juice */}
+            {/* FAQ SECTION */}
+            <section className="bg-white border border-gray-150 rounded-3xl p-6 md:p-10 shadow-sm mt-8">
+              <div className="text-center max-w-2xl mx-auto mb-8">
+                <span className="bg-[#EBF1E6] border border-[#092813]/15 text-[#092813] text-[10px] font-black tracking-widest px-3 py-1 rounded-full uppercase">
+                  FAQ
+                </span>
+                <h2 className="font-serif text-2xl md:text-4xl font-extrabold text-[#092813] mt-3 tracking-tight">
+                  ❓ Frequently Asked Questions
+                </h2>
+              </div>
+              <div className="max-w-3xl mx-auto space-y-2">
+                {SEA_BUCKTHORN_FAQS.map((faq, idx) => {
+                  const isOpen = activeFaq === idx;
+                  return (
+                    <div key={idx} className="border-b border-gray-100 pb-2">
+                      <button
+                        onClick={() => setActiveFaq(isOpen ? null : idx)}
+                        className="w-full flex justify-between items-center py-3 text-left cursor-pointer text-sm font-bold text-gray-800 hover:text-[#092813] transition-colors"
+                      >
+                        <span>👉 {idx + 1}. {faq.q}</span>
+                        <ChevronDown size={16} className={`text-gray-400 transition-transform shrink-0 ml-2 ${isOpen ? 'rotate-180' : ''}`} />
+                      </button>
+                      {isOpen && (
+                        <p className="text-xs text-gray-550 leading-relaxed pb-3 animate-fade-in font-medium whitespace-pre-line">
+                          {faq.a}
+                        </p>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </section>
+
+            {/* 1. WHY CHOOSE SEA BUCKTHORN JUICE */}
             <section className="bg-white border border-gray-150 rounded-3xl p-6 md:p-10 shadow-sm mt-8">
               <div className="text-center max-w-2xl mx-auto mb-8">
                 <span className="bg-[#EBF1E6] border border-[#092813]/15 text-[#092813] text-[10px] font-black tracking-widest px-3 py-1 rounded-full uppercase">
                   Key Benefits
                 </span>
                 <h2 className="font-serif text-2xl md:text-4xl font-extrabold text-[#092813] mt-3 tracking-tight">
-                  {product.id === 'p1' ? 'Why Choose Sea Buckthorn Juice?' : product.id === 'p2' ? 'Why Choose Sea Buckthorn Juice?' : 'Why Choose Sea Buckthorn Juice?'}
+                  Why Choose <span className="text-[#FE8B00]">Sea Buckthorn Juice?</span>
                 </h2>
                 <p className="text-[11px] sm:text-xs text-gray-500 font-semibold mt-2">
-                  A powerful formula crafted to support your wellness journey.
+                  Nature's rare superfruit packed with essential nutrients for your daily wellness.
                 </p>
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div className="lg:col-span-4 space-y-6">
-                  <div className="flex items-start gap-4 text-left">
-                    <div className="w-12 h-12 rounded-full bg-[#EBF1E6] flex items-center justify-center text-[#092813] shrink-0 shadow-sm border border-[#092813]/10">
-                      <Leaf size={20} />
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-extrabold text-gray-900 leading-tight">Supports Healthy Sugar Levels</h4>
-                      <p className="text-[11px] text-gray-550 font-medium leading-normal mt-1">Helps maintain healthy blood sugar levels.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4 text-left">
-                    <div className="w-12 h-12 rounded-full bg-[#EBF1E6] flex items-center justify-center text-[#092813] shrink-0 shadow-sm border border-[#092813]/10">
-                      <Zap size={20} />
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-extrabold text-gray-900 leading-tight">Improves Energy & Reduces Fatigue</h4>
-                      <p className="text-[11px] text-gray-550 font-medium leading-normal mt-1">Helps boost energy levels and reduces tiredness.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4 text-left">
-                    <div className="w-12 h-12 rounded-full bg-[#EBF1E6] flex items-center justify-center text-[#092813] shrink-0 shadow-sm border border-[#092813]/10">
-                      <Scale size={20} />
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-extrabold text-gray-900 leading-tight">Supports Better Metabolism</h4>
-                      <p className="text-[11px] text-gray-550 font-medium leading-normal mt-1">Helps improve metabolism and promotes overall wellness.</p>
-                    </div>
-                  </div>
+                  {[
+                    { ...WHY_CHOOSE_BENEFITS_LEFT[0], icon: ShieldCheck },
+                    { ...WHY_CHOOSE_BENEFITS_LEFT[1], icon: Heart },
+                    { ...WHY_CHOOSE_BENEFITS_LEFT[2], icon: Sparkles },
+                    { ...WHY_CHOOSE_BENEFITS_LEFT[3], icon: Zap },
+                  ].map((item, idx) => {
+                    const Icon = item.icon;
+                    return (
+                      <div key={idx} className="flex items-start gap-4 text-left">
+                        <div className="w-12 h-12 rounded-full bg-[#EBF1E6] flex items-center justify-center text-[#092813] shrink-0 shadow-sm border border-[#092813]/10">
+                          <Icon size={20} />
+                        </div>
+                        <div>
+                          <h4 className="text-sm font-extrabold text-gray-900 leading-tight">{item.title}</h4>
+                          <p className="text-[11px] text-gray-550 font-medium leading-normal mt-1">{item.desc}</p>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
 
                 <div className="lg:col-span-4 flex flex-col items-center justify-center relative py-4">
@@ -1020,97 +1069,53 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
                 </div>
 
                 <div className="lg:col-span-4 space-y-6">
-                  <div className="flex items-start gap-4 text-left">
-                    <div className="w-12 h-12 rounded-full bg-[#EBF1E6] flex items-center justify-center text-[#092813] shrink-0 shadow-sm border border-[#092813]/10">
-                      <ShieldCheck size={20} />
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-extrabold text-gray-900 leading-tight">Expertly Formulated</h4>
-                      <p className="text-[11px] text-gray-550 font-medium leading-normal mt-1">Carefully crafted with premium ingredients.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4 text-left">
-                    <div className="w-12 h-12 rounded-full bg-[#EBF1E6] flex items-center justify-center text-[#092813] shrink-0 shadow-sm border border-[#092813]/10">
-                      <Droplet size={20} />
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-extrabold text-gray-900 leading-tight">Helps Detoxify</h4>
-                      <p className="text-[11px] text-gray-550 font-medium leading-normal mt-1">Helps cleanse the body and removes toxins.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4 text-left">
-                    <div className="w-12 h-12 rounded-full bg-[#EBF1E6] flex items-center justify-center text-[#092813] shrink-0 shadow-sm border border-[#092813]/10">
-                      <User size={20} />
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-extrabold text-gray-900 leading-tight">Supports Overall Wellness</h4>
-                      <p className="text-[11px] text-gray-550 font-medium leading-normal mt-1">Supports overall health and helps you feel active every day.</p>
-                    </div>
-                  </div>
+                  {[
+                    { ...WHY_CHOOSE_BENEFITS_RIGHT[0], icon: Scale },
+                    { ...WHY_CHOOSE_BENEFITS_RIGHT[1], icon: Droplet },
+                    { ...WHY_CHOOSE_BENEFITS_RIGHT[2], icon: Shield },
+                    { ...WHY_CHOOSE_BENEFITS_RIGHT[3], icon: User },
+                  ].map((item, idx) => {
+                    const Icon = item.icon;
+                    return (
+                      <div key={idx} className="flex items-start gap-4 text-left">
+                        <div className="w-12 h-12 rounded-full bg-[#EBF1E6] flex items-center justify-center text-[#092813] shrink-0 shadow-sm border border-[#092813]/10">
+                          <Icon size={20} />
+                        </div>
+                        <div>
+                          <h4 className="text-sm font-extrabold text-gray-900 leading-tight">{item.title}</h4>
+                          <p className="text-[11px] text-gray-550 font-medium leading-normal mt-1">{item.desc}</p>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
 
               <div className="border-t border-gray-100 pt-6 mt-8 grid grid-cols-2 md:grid-cols-5 gap-4 text-center text-[9px] font-bold text-gray-550 uppercase tracking-widest font-sans px-4">
-                <span className="flex items-center justify-center gap-1.5"><FlaskConical size={13} className="text-[#092813]" /> Checked for Purity</span>
+                <span className="flex items-center justify-center gap-1.5"><FlaskConical size={13} className="text-[#092813]" /> Lab Tested for Purity</span>
                 <span className="flex items-center justify-center gap-1.5"><Sparkles size={13} className="text-[#092813]" /> No Side Effects</span>
-                <span className="flex items-center justify-center gap-1.5"><Leaf size={13} className="text-[#092813]" /> Premium Ingredients</span>
-                <span className="flex items-center justify-center gap-1.5"><User size={13} className="text-[#092813]" /> Trusted by Customers</span>
-                <span className="flex items-center justify-center gap-1.5"><ShieldCheck size={13} className="text-[#092813]" /> Quality Assured</span>
+                <span className="flex items-center justify-center gap-1.5"><Leaf size={13} className="text-[#092813]" /> 100% Natural Ingredients</span>
+                <span className="flex items-center justify-center gap-1.5"><User size={13} className="text-[#092813]" /> Trusted by Thousands</span>
+                <span className="flex items-center justify-center gap-1.5"><ShieldCheck size={13} className="text-[#092813]" /> GMP Certified Facility</span>
               </div>
             </section>
 
-            {/* 2. OUR AYURVEDIC INGREDIENTS STORY */}
+            {/* 2. INGREDIENTS STORY */}
             <section className="bg-white border border-gray-150 rounded-3xl p-6 md:p-10 shadow-sm mt-8 relative overflow-hidden">
               <div className="text-center max-w-2xl mx-auto mb-8">
                 <span className="bg-[#EBF1E6] border border-[#092813]/15 text-[#092813] text-[10px] font-black tracking-widest px-3 py-1 rounded-full uppercase">
-                  The Power of Premium Quality
+                  The Power of Nature
                 </span>
                 <h2 className="font-serif text-2xl md:text-4xl font-extrabold text-[#092813] mt-3 tracking-tight">
-                  Our Ingredients Story
+                  Our Sea Buckthorn Juice Ingredients Story
                 </h2>
                 <p className="text-[11px] sm:text-xs text-gray-550 font-semibold mt-2">
-                  {product.id === 'p1' ? 'Sea Buckthorn Juice' : product.id === 'p2' ? 'Sea Buckthorn Juice' : 'Sea Buckthorn Juice'} is crafted with time-tested herbs known for their ability to support healthy sugar levels and overall well-being.
+                  Swavalambi's Sea Buckthorn Juice is crafted with nature's finest superfruit and packed with essential nutrients to support your overall wellness.
                 </p>
               </div>
 
               <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-                {[
-                  {
-                    name: "Sea Buckthorn",
-                    botanical: "(Hippophae rhamnoides)",
-                    img: "/assets/content/image-Photoroom%20(21).png",
-                    desc: "Rich in Omega 3, 6, 7 & 9, Vitamin C and antioxidants. Boosts immunity and skin health.",
-                    points: ["Rich in Omega fatty acids", "Boosts immunity", "Promotes skin health"]
-                  },
-                  {
-                    name: "Amla",
-                    botanical: "(Phyllanthus emblica)",
-                    img: "/assets/content/amla.jpg",
-                    desc: "A powerful source of Vitamin C and antioxidants that help strengthen immunity.",
-                    points: ["High in Vitamin C", "Strengthens immunity", "Powerful antioxidant"]
-                  },
-                  {
-                    name: "Turmeric",
-                    botanical: "(Curcuma longa)",
-                    img: "/assets/content/turmeric.png",
-                    desc: "Known for its anti-inflammatory and antioxidant properties.",
-                    points: ["Anti-inflammatory", "Antioxidant properties", "Supports joint health"]
-                  },
-                  {
-                    name: "Ginger",
-                    botanical: "(Zingiber officinale)",
-                    img: "/assets/content/ginger.png",
-                    desc: "Helps improve digestion and supports nutrient absorption.",
-                    points: ["Improves digestion", "Supports nutrient absorption", "Soothes stomach"]
-                  },
-                  {
-                    name: "Black Pepper",
-                    botanical: "(Piper nigrum)",
-                    img: "/assets/content/black_pepper.png",
-                    desc: "Enhances absorption of nutrients and supports overall health.",
-                    points: ["Enhances nutrient absorption", "Supports overall health", "Aids digestion"]
-                  }
-                ].map((herb, idx) => (
+                {INGREDIENTS_STORY.map((herb, idx) => (
                   <div key={idx} className="bg-[#F9FDF9] border border-gray-100 rounded-2xl p-4 flex flex-col justify-between hover:shadow-md transition-shadow text-left">
                     <div>
                       <div className="w-14 h-14 rounded-full border border-gray-150 p-1 bg-white shadow-sm flex items-center justify-center overflow-hidden mx-auto mb-3">
@@ -1120,7 +1125,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
                         <h4 className="text-xs font-black text-gray-900 leading-none">{herb.name}</h4>
                         <span className="text-[8px] text-gray-400 font-extrabold italic block mt-1">{herb.botanical}</span>
                       </div>
-                      <p className="text-[9.5px] text-gray-500 leading-relaxed text-center font-medium border-b border-gray-100 pb-3 mb-3 h-[45px] flex items-center justify-center">
+                      <p className="text-[9.5px] text-gray-500 leading-relaxed text-center font-medium border-b border-gray-100 pb-3 mb-3 min-h-[45px] flex items-center justify-center">
                         {herb.desc}
                       </p>
                       <ul className="space-y-1.5 text-[8.5px] font-bold text-gray-600">
@@ -1137,24 +1142,105 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
               </div>
 
               <div className="border-t border-gray-100 pt-6 mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-[9px] font-bold text-gray-550 uppercase tracking-widest font-sans px-4">
-                <span className="flex items-center justify-center gap-1.5"><Sprout size={13} className="text-[#092813]" /> Premium</span>
+                <span className="flex items-center justify-center gap-1.5"><Sprout size={13} className="text-[#092813]" /> 100% Natural</span>
                 <span className="flex items-center justify-center gap-1.5"><Sparkles size={13} className="text-[#092813]" /> Synergistic Formula</span>
-                <span className="flex items-center justify-center gap-1.5"><FlaskConical size={13} className="text-[#092813]" /> Traditional Wisdom</span>
+                <span className="flex items-center justify-center gap-1.5"><FlaskConical size={13} className="text-[#092813]" /> Ayurvedic Wisdom</span>
                 <span className="flex items-center justify-center gap-1.5"><ShieldCheck size={13} className="text-[#092813]" /> Safe & Effective</span>
               </div>
             </section>
 
-            {/* 3. THE AYURVEDIC WAY TO BALANCE & HEAL NATURALLY */}
+            {/* 3. HIMALAYAN STORY */}
+            <section className="bg-white border border-gray-150 rounded-3xl p-6 md:p-10 shadow-sm mt-8 relative overflow-hidden">
+              <div className="text-center max-w-2xl mx-auto mb-8">
+                <span className="bg-[#EBF1E6] border border-[#092813]/15 text-[#092813] text-[10px] font-black tracking-widest px-3 py-1 rounded-full uppercase">
+                  🌿 Swavalambi Sea Buckthorn Juice
+                </span>
+                <h2 className="font-serif text-2xl md:text-4xl font-extrabold text-[#092813] mt-3 tracking-tight">
+                  Pure Leh-Ladakh Himalayan Berries
+                </h2>
+                <p className="text-[11px] sm:text-xs text-gray-550 font-semibold mt-2">
+                  🏔️ Harvested from the heights of Leh–Ladakh • 💛 100% Fresh • No Extracts • No Concentrates • No Artificial Additives
+                </p>
+              </div>
+
+              <div className="space-y-8 max-w-3xl mx-auto text-left">
+                <div>
+                  <h3 className="font-serif text-lg font-bold text-[#092813] mb-2">🌿 Nature's Pure Himalayan Superfruit</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    From the untouched, icy mountains of Leh–Ladakh, comes one of nature's most powerful superfruits — the golden Sea Buckthorn Berry (Himalayan Berry). At Swavalambi India, we carefully source these berries directly from Himalayan regions, hand-picked at peak ripeness to preserve their natural nutrition, freshness, and bio-active power.
+                  </p>
+                  <p className="text-sm text-gray-600 leading-relaxed mt-2">
+                    👉 Unlike regular juices made from extracts, powders, or concentrates, our juice is made from fresh whole berries, ensuring true natural potency.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-serif text-lg font-bold text-[#092813] mb-2">🏔️ From Himalayan Farms to Your Bottle</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed mb-3">
+                    Sea Buckthorn grows in extreme Himalayan conditions at 10,000+ feet altitude, where survival itself is difficult. Every berry is:
+                  </p>
+                  <ul className="space-y-2 text-sm text-gray-600 mb-3">
+                    <li className="flex items-start gap-2"><Check size={14} className="text-[#092813] shrink-0 mt-0.5" /> Carefully hand-harvested</li>
+                    <li className="flex items-start gap-2"><Check size={14} className="text-[#092813] shrink-0 mt-0.5" /> Collected by local Himalayan farmers</li>
+                    <li className="flex items-start gap-2"><Check size={14} className="text-[#092813] shrink-0 mt-0.5" /> Processed with utmost care to preserve nutrients</li>
+                  </ul>
+                  <p className="text-sm text-gray-600 leading-relaxed">👉 This makes every bottle a symbol of purity, effort, and Himalayan authenticity.</p>
+                </div>
+                <div>
+                  <h3 className="font-serif text-lg font-bold text-[#092813] mb-2">💛 Why Swavalambi Sea Buckthorn Juice Is Special</h3>
+                  <ul className="space-y-2 text-sm text-gray-600">
+                    <li className="flex items-start gap-2"><Check size={14} className="text-[#092813] shrink-0 mt-0.5" /> Made from Fresh Whole Himalayan Berries</li>
+                    <li className="flex items-start gap-2"><Check size={14} className="text-[#092813] shrink-0 mt-0.5" /> Cold-Processed to Preserve Nutrition</li>
+                    <li className="flex items-start gap-2"><Check size={14} className="text-[#092813] shrink-0 mt-0.5" /> Rich source of Vitamin C, Omega 3, 6, 7 & 9</li>
+                    <li className="flex items-start gap-2"><Check size={14} className="text-[#092813] shrink-0 mt-0.5" /> Sourced ethically from Leh–Ladakh regions</li>
+                    <li className="flex items-start gap-2"><Check size={14} className="text-[#092813] shrink-0 mt-0.5" /> No added sugar, no colour, no artificial flavour</li>
+                  </ul>
+                  <p className="text-sm font-semibold text-[#092813] mt-3">👉 Pure nature. Pure wellness. Nothing else.</p>
+                </div>
+                <div className="bg-[#F9FDF9] border border-gray-100 rounded-2xl p-5">
+                  <h3 className="font-serif text-lg font-bold text-[#092813] mb-3">🌞 Key Wellness Benefits</h3>
+                  <ul className="space-y-2 text-sm text-gray-600">
+                    {KEY_WELLNESS_BENEFITS.map((benefit, idx) => (
+                      <li key={idx} className="flex items-start gap-2">
+                        <Check size={14} className="text-[#092813] shrink-0 mt-0.5" />
+                        {benefit}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="bg-[#F9FDF9] border border-gray-100 rounded-2xl p-5">
+                  <h3 className="font-serif text-lg font-bold text-[#092813] mb-2">🧡 How to Use</h3>
+                  <ul className="space-y-2 text-sm text-gray-600">
+                    <li className="flex items-start gap-2"><Check size={14} className="text-[#092813] shrink-0 mt-0.5" /> Shake well before use</li>
+                    <li className="flex items-start gap-2"><Check size={14} className="text-[#092813] shrink-0 mt-0.5" /> Take 5 ml twice daily</li>
+                    <li className="flex items-start gap-2"><Check size={14} className="text-[#092813] shrink-0 mt-0.5" /> Best taken on empty stomach</li>
+                    <li className="flex items-start gap-2"><Check size={14} className="text-[#092813] shrink-0 mt-0.5" /> Can be diluted with lukewarm water</li>
+                  </ul>
+                  <p className="text-sm text-gray-600 mt-3">👉 For best results, use regularly for at least 3 months.</p>
+                </div>
+                <div className="bg-[#EBF1E6]/40 border border-[#092813]/10 rounded-2xl p-5">
+                  <h3 className="font-serif text-lg font-bold text-[#092813] mb-3">✨ Purity Promise of Swavalambi</h3>
+                  <p className="text-sm text-gray-600 mb-3">Every bottle of Swavalambi Sea Buckthorn Juice stands for:</p>
+                  <ul className="space-y-2 text-sm text-gray-700 font-medium">
+                    <li>🌿 Authentic Ayurvedic wellness</li>
+                    <li>🏔️ Himalayan purity & freshness</li>
+                    <li>🤝 Ethical sourcing from farmers</li>
+                    <li>💛 No chemicals, no compromise</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            {/* 4. HOW IT WORKS */}
             <section className="bg-white border border-gray-150 rounded-3xl p-6 md:p-10 shadow-sm mt-8">
               <div className="text-center max-w-2xl mx-auto mb-8">
                 <span className="bg-[#EBF1E6] border border-[#092813]/15 text-[#092813] text-[10px] font-black tracking-widest px-3 py-1 rounded-full uppercase">
                   How It Works
                 </span>
                 <h2 className="font-serif text-2xl md:text-4xl font-extrabold text-[#092813] mt-3 tracking-tight">
-                  The Way to Balance & Heal
+                  The Natural Way to <span className="text-[#FE8B00]">Nourish, Balance & Heal</span> with Sea Buckthorn
                 </h2>
                 <p className="text-[11px] sm:text-xs text-gray-550 font-semibold mt-2">
-                  {product.id === 'p1' ? 'Sea Buckthorn Juice' : product.id === 'p2' ? 'Sea Buckthorn Juice' : 'Sea Buckthorn Juice'} works with your body to support healthy sugar levels, improve energy and overall wellness.
+                  Swavalambi's Sea Buckthorn Juice works naturally with your body to support immunity, energy, skin health and overall wellness.
                 </p>
               </div>
 
@@ -1162,36 +1248,11 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
                 <div className="absolute top-[48px] left-[10%] right-[10%] h-[1.5px] border-t border-dashed border-[#FE8B00]/50 hidden md:block -z-0"></div>
 
                 {[
-                  {
-                    step: "1",
-                    title: "Nourishes & Detoxifies",
-                    desc: "Powerful herbs help detoxify the body by removing toxins and supporting internal balance.",
-                    icon: Droplet
-                  },
-                  {
-                    step: "2",
-                    title: "Supports Healthy Sugar Levels",
-                    desc: "Helps improve insulin function and maintain healthy blood sugar levels.",
-                    icon: Scale
-                  },
-                  {
-                    step: "3",
-                    title: "Boosts Energy & Metabolism",
-                    desc: "Improves metabolism and cellular energy production to reduce fatigue and weakness.",
-                    icon: Zap
-                  },
-                  {
-                    step: "4",
-                    title: "Strengthens Premium Defenses",
-                    desc: "Strengthens immunity and protects the body from oxidative stress and inflammation.",
-                    icon: Shield
-                  },
-                  {
-                    step: "5",
-                    title: "Promotes Long Term Wellness",
-                    desc: "Regular use helps maintain healthy sugar levels, sustained energy and overall well-being.",
-                    icon: Sparkles
-                  }
+                  { ...HOW_IT_WORKS_STEPS[0], icon: Droplet },
+                  { ...HOW_IT_WORKS_STEPS[1], icon: Scale },
+                  { ...HOW_IT_WORKS_STEPS[2], icon: Zap },
+                  { ...HOW_IT_WORKS_STEPS[3], icon: Shield },
+                  { ...HOW_IT_WORKS_STEPS[4], icon: Sparkles },
                 ].map((item, idx) => {
                   const StepIcon = item.icon;
                   return (
@@ -1210,37 +1271,30 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
               </div>
 
               <div className="border-t border-gray-100 pt-6 mt-8 grid grid-cols-2 md:grid-cols-5 gap-4 text-center text-[9px] font-bold text-gray-550 uppercase tracking-widest font-sans px-4">
-                <span className="flex items-center justify-center gap-1.5"><Leaf size={13} className="text-[#092813]" /> Works with your body</span>
-                <span className="flex items-center justify-center gap-1.5"><Sparkles size={13} className="text-[#092813]" /> No harmful chemicals</span>
-                <span className="flex items-center justify-center gap-1.5"><ShieldCheck size={13} className="text-[#092813]" /> Pure & Safe</span>
-                <span className="flex items-center justify-center gap-1.5"><FlaskConical size={13} className="text-[#092813]" /> Visible results with consistent use</span>
-                <span className="flex items-center justify-center gap-1.5"><User size={13} className="text-[#092813]" /> Trusted by our customers</span>
+                <span className="flex items-center justify-center gap-1.5"><Leaf size={13} className="text-[#092813]" /> 100% Natural</span>
+                <span className="flex items-center justify-center gap-1.5"><FlaskConical size={13} className="text-[#092813]" /> No Harmful Chemicals</span>
+                <span className="flex items-center justify-center gap-1.5"><ShieldCheck size={13} className="text-[#092813]" /> Natural & Safe</span>
+                <span className="flex items-center justify-center gap-1.5"><Sprout size={13} className="text-[#092813]" /> Visible Results</span>
+                <span className="flex items-center justify-center gap-1.5"><User size={13} className="text-[#092813]" /> Trusted by Thousands</span>
               </div>
             </section>
 
-            {/* 4. PURE. SAFE. Trusted by Customers */}
+            {/* 5. TRUST THAT MATTERS */}
             <section className="bg-[#F9FDF9] border border-gray-150 rounded-3xl p-6 md:p-10 shadow-sm mt-8">
               <div className="text-center max-w-2xl mx-auto mb-8">
                 <span className="bg-[#EBF1E6] border border-[#092813]/15 text-[#092813] text-[10px] font-black tracking-widest px-3 py-1 rounded-full uppercase">
                   Trust That Matters
                 </span>
                 <h2 className="font-serif text-2xl md:text-4xl font-extrabold text-[#092813] mt-3 tracking-tight">
-                  Pure. Safe. Trusted by Customers.
+                  Pure. Safe. <span className="text-[#FE8B00]">Trusted by Thousands.</span>
                 </h2>
                 <p className="text-[11px] sm:text-xs text-gray-550 font-semibold mt-2">
-                  At Swavalambi India, every bottle of {product.id === 'p1' ? 'Sea Buckthorn Juice' : product.id === 'p2' ? 'Sea Buckthorn Juice' : 'Sea Buckthorn Juice'} is crafted with honesty, backed by science and rooted in authenticity.
+                  At Swavalambi India, every bottle of Sea Buckthorn Juice is crafted with honesty, backed by science and rooted in nature.
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
-                {[
-                  { title: "Quality Assured", desc: "Manufactured in GMP certified facilities ensuring the highest quality standards." },
-                  { title: "Quality Checked", desc: "Every batch is tested for purity, potency and heavy metals by certified labs." },
-                  { title: "Premium Ingredients", desc: "Made with carefully selected herbs, no harmful chemicals or additives." },
-                  { title: "Carefully Crafted Formula", desc: "A formula that is expertly crafted for your wellness journey." },
-                  { title: "Carefully Researched", desc: "Formulated based on Authentic wisdom and modern research." },
-                  { title: "Trusted by Customers", desc: "Our customers trust Swavalambi India for their wellness journey." }
-                ].map((item, idx) => (
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                {TRUST_PILLARS.map((item, idx) => (
                   <div key={idx} className="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col justify-between text-center hover:shadow-md transition-shadow">
                     <div>
                       <h4 className="text-[11px] font-black text-gray-900 leading-tight mb-2">{item.title}</h4>
@@ -1251,37 +1305,35 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
               </div>
 
               <div className="border-t border-gray-100 pt-6 mt-8 flex flex-col md:flex-row items-center justify-between gap-6 text-[10px] font-bold text-gray-550 uppercase tracking-widest font-sans px-4">
-                <span className="flex items-center gap-2"><Leaf size={14} className="text-[#092813]" /> TRADITIONAL WISDOM</span>
-                <span className="flex items-center gap-2"><ShieldCheck size={14} className="text-[#092813]" /> QUALITY PROMISE</span>
-                <span className="text-center font-extrabold text-[#FE8B00] text-xs">PURE WELLNESS. HONEST CARE. REAL RESULTS.</span>
-                <span className="flex items-center gap-2"><Sparkles size={14} className="text-[#092813]" /> HONEST & TRANSPARENT</span>
-                <span className="flex items-center gap-2"><User size={14} className="text-[#092813]" /> HERE TO SUPPORT</span>
+                <span className="flex items-center gap-2"><Leaf size={14} className="text-[#092813]" /> Ayurvedic Wisdom</span>
+                <span className="flex items-center gap-2"><ShieldCheck size={14} className="text-[#092813]" /> Quality Promise</span>
+                <span className="text-center font-extrabold text-[#FE8B00] text-xs">PURE AYURVEDA. HONEST CARE. REAL RESULTS.</span>
+                <span className="flex items-center gap-2"><Sprout size={14} className="text-[#092813]" /> Honest & Transparent</span>
+                <span className="flex items-center gap-2"><User size={14} className="text-[#092813]" /> Here to Support</span>
               </div>
             </section>
 
-            {/* 5. Loved by Customers - CUSTOMER REVIEWS */}
+            {/* 6. LOVED BY CUSTOMERS */}
             <section className="bg-white border border-gray-150 rounded-3xl p-6 md:p-10 shadow-sm mt-8">
               <div className="text-center max-w-2xl mx-auto mb-8">
                 <span className="bg-[#EBF1E6] border border-[#092813]/15 text-[#092813] text-[10px] font-black tracking-widest px-3 py-1 rounded-full uppercase">
                   Our Happy Customers
                 </span>
                 <h2 className="font-serif text-2xl md:text-4xl font-extrabold text-[#092813] mt-3 tracking-tight">
-                  Loved by Customers. Trusted Every Day.
+                  Loved by <span className="text-[#092813]">Thousands.</span> <span className="text-[#FE8B00]">Trusted Every Day.</span>
                 </h2>
                 <p className="text-[11px] sm:text-xs text-gray-500 font-semibold mt-2">
-                  Real people. Real results. See how {product.name} is helping customers lead healthier, happier lives.
+                  Real people. Real results. See how Swavalambi's Sea Buckthorn Juice is helping customers lead healthier, happier lives.
                 </p>
               </div>
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 bg-[#F9FDF9] border border-gray-100 rounded-2xl p-5 mb-8 text-center">
                 <div>
-                  <span className="block text-2xl font-black text-[#092813]">{product.rating} / 5</span>
-                  <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">{product.reviews.toLocaleString()}+ Reviews</span>
+                  <span className="block text-2xl font-black text-[#092813]">4.8 / 5</span>
+                  <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">2,500+ Reviews</span>
                 </div>
                 <div>
-                  <span className="block text-2xl font-black text-[#092813]">
-                    {product.bottlesSold === 'New' ? '150+' : `${(product.reviews * 1.5).toLocaleString()}+`}
-                  </span>
+                  <span className="block text-2xl font-black text-[#092813]">3,750+</span>
                   <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Happy Customers</span>
                 </div>
                 <div>
@@ -1289,38 +1341,13 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
                   <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Satisfaction Rate</span>
                 </div>
                 <div>
-                  <span className="block text-2xl font-black text-[#092813]">{product.bottlesSold === 'New' ? 'New' : product.bottlesSold}</span>
+                  <span className="block text-2xl font-black text-[#092813]">21,000+</span>
                   <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Bottles Sold</span>
                 </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                {[
-                  {
-                    name: "Rajesh S.",
-                    city: "Pune, Maharashtra",
-                    title: "Better Energy & Sugar Levels",
-                    text: "I've been using Sea Buckthorn Juice for 2 months and my sugar levels are more stable now. I feel more energetic and active throughout the day."
-                  },
-                  {
-                    name: "Meena R.",
-                    city: "Bengaluru, Karnataka",
-                    title: "Pure & Effective",
-                    text: "I love that it's Authentic and has no side effects. My digestion has improved and I feel lighter and healthier."
-                  },
-                  {
-                    name: "Amit K.",
-                    city: "Ahmedabad, Gujarat",
-                    title: "Great Support for Diabetes Care",
-                    text: "This has become a part of my daily routine. It helps maintain my sugar levels along with my doctor's advice."
-                  },
-                  {
-                    name: "Sunita D.",
-                    city: "Lucknow, Uttar Pradesh",
-                    title: "Trusted & Reliable Brand",
-                    text: "Swavalambi India is a brand I can trust. Great quality and visible results. Highly recommended!"
-                  }
-                ].map((rev, idx) => (
+                {CUSTOMER_REVIEWS.map((rev, idx) => (
                   <div key={idx} className="bg-[#F9FDF9] border border-gray-100 rounded-2xl p-5 flex flex-col justify-between text-left hover:shadow-md transition-shadow">
                     <div>
                       <div className="flex text-[#FE8B00] gap-0.5 mb-3">

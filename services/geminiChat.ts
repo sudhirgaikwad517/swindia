@@ -17,7 +17,7 @@ Price: ₹${product.price} (MRP ₹${product.originalPrice})
 Benefits: ${product.benefits.join(', ')}
 Dosage: ${product.dosage}, ${product.dosageFreq}
 Usage: ${product.usageInfo}
-Shipping: Free above ₹499, COD available
+Shipping: FREE delivery across India, COD available
 WhatsApp: +91 93739 86362
 
 Reply in 2-3 short sentences. Match user's language (English/Hindi/Marathi). No medical cure claims.`;

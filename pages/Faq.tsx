@@ -4,60 +4,21 @@ import {
   ChevronDown, ChevronUp, Leaf, Phone, Mail, Clock, HelpCircle, 
   ShieldCheck, Sprout, Heart, ArrowRight, Truck, CheckCircle, FlaskConical, MessageCircle, Star 
 } from 'lucide-react';
+import { SEA_BUCKTHORN_FAQS } from '../productContent';
 
 const Faq: React.FC = () => {
   const navigate = useNavigate();
   const [activeFaq, setActiveFaq] = useState<number | null>(0); // Open first one by default
 
   const faqs = [
+    ...SEA_BUCKTHORN_FAQS.map((faq, idx) => ({
+      q: `${idx + 1}. ${faq.q}`,
+      a: faq.a,
+    })),
     {
-      q: "1. What is Sea Buckthorn Juice?",
-      a: "Sea Buckthorn Juice is an Authentic formulation made with time-tested herbs that help support healthy blood sugar levels, improve metabolism and overall well-being effectively."
+      q: '12. Do you ship across India?',
+      a: 'Yes, we ship to almost all pincodes across India. FREE delivery across India and Cash on Delivery (COD) is available.',
     },
-    {
-      q: "2. How does Sea Buckthorn Juice work?",
-      a: "It works by improving insulin sensitivity, supporting healthy pancreas functions, slowing carbohydrate absorption in the gut, and effectively detoxifying the body to maintain stable glucose levels."
-    },
-    {
-      q: "3. Is Sea Buckthorn Juice safe to use daily?",
-      a: "Yes, it is formulated with Premium Authentic herbs, contains no added chemical preservatives or sweeteners, and is lab-tested for heavy metals and purity, making it completely safe for daily long-term use."
-    },
-    {
-      q: "4. Who can use Sea Buckthorn Juice?",
-      a: "It is suitable for adults looking to regulate blood sugar levels effectively, pre-diabetics, and anyone seeking to improve their overall metabolic health and energy levels."
-    },
-    {
-      q: "5. How much Sea Buckthorn Juice should I take?",
-      a: "We recommend taking 30ml of syrup mixed in a glass of warm water once daily, or as directed by an Authentic physician."
-    },
-    {
-      q: "6. When is the best time to take it?",
-      a: "The best time to consume Sea Buckthorn Juice is after the night meal (dinner). Dilute it in a cup of warm water and consume."
-    },
-    {
-      q: "7. How long does it take to see results?",
-      a: "While individual results may vary based on diet and lifestyle, most customers notice steady improvements in energy levels and blood sugar readings within 4 to 6 weeks of regular usage."
-    },
-    {
-      q: "8. Can it be used with other medications?",
-      a: "Yes. However, we advise keeping a gap of at least 45 minutes between Sea Buckthorn Juice and your regular allopathic medications."
-    },
-    {
-      q: "9. Are there any side effects?",
-      a: "There are no known side effects associated with Sea Buckthorn Juice when consumed according to the recommended dosage. It is a pure, safe, and herbal formulation."
-    },
-    {
-      q: "10. Where is Sea Buckthorn Juice manufactured?",
-      a: "It is manufactured in state-of-the-art facilities in India that are quality-assured to ensure premium quality control."
-    },
-    {
-      q: "11. How should I store Sea Buckthorn Juice?",
-      a: "Store the bottle in a cool, dry place away from direct sunlight. Do not refrigerate or freeze. Ensure the cap is tightly closed after each use."
-    },
-    {
-      q: "12. Do you ship across India?",
-      a: "Yes, we ship to almost all pincodes across India. Free shipping is automatically applied on orders above ₹499, and COD (Cash on Delivery) is available."
-    }
   ];
 
   return (
@@ -335,7 +296,7 @@ const Faq: React.FC = () => {
       {/* 4. Footer Trust Ribbon */}
       <div className="bg-[#061C0D] text-white py-5 border-t border-[#FE8B00]/15">
         <div className="container mx-auto px-6 max-w-5xl flex flex-wrap justify-between items-center gap-4 text-[9px] sm:text-[10px] font-bold uppercase tracking-wider select-none text-white/80">
-          <span className="flex items-center gap-1.5"><Truck size={13} className="text-[#FE8B00]" /> Free Shipping (On all orders)</span>
+          <span className="flex items-center gap-1.5">🚚 FREE Delivery Across India</span>
           <span className="text-white/20 hidden md:inline">|</span>
           <span className="flex items-center gap-1.5"><ShieldCheck size={13} className="text-[#FE8B00]" /> Safe & Secure (Payments)</span>
           <span className="text-white/20 hidden md:inline">|</span>

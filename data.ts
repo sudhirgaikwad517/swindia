@@ -12,23 +12,30 @@ export const PRODUCTS: Product[] = [
   {
     id: 'p1',
     sku: 'swavalambi-sea-buckthorn-juice-100ml',
-    name: 'Swavalambi Sea Buckthorn Juice (100 ml)',
-    tagline: 'Pure Health Boost',
+    name: 'Sea Buckthorn Himalayan Juice',
+    tagline: "Nature's Power of Omega 3, 6, 7, 9 & Vitamin C",
     price: 899,
-    rating: 4.9,
-    reviews: 150,
+    rating: 4.8,
+    reviews: 2100,
     image: '/assets/content/image-Photoroom%20(21).png',
     gallery: [],
     category: 'Juices & Tonics',
     badges: ['BESTSELLER'],
-    description: 'A pure Sea Buckthorn juice packed with vitamins, minerals, and antioxidants to boost immunity and promote overall wellness.',
-    benefits: ['Boosts Immunity', 'Rich in Vitamin C', 'Promotes Skin Health', 'Supports Digestion'],
+    description: 'Premium Himalayan superfood made from fresh whole Leh–Ladakh Sea Buckthorn berries. Rich in Omega 3, 6, 7 & 9 and natural Vitamin C for daily immunity, skin health, energy, and heart wellness.',
+    benefits: [
+      'Helps support natural immunity strength',
+      'Promotes healthy skin glow & anti-aging support',
+      'Supports heart, liver & digestive wellness',
+      'Enhances energy, stamina & vitality',
+      'Helps maintain internal detox & balance',
+      'Supports overall daily wellness',
+    ],
     ingredients: ['Sea Buckthorn', 'Amla', 'Turmeric', 'Ginger', 'Black Pepper'],
     stock: 80,
-    dosage: "10-20ml",
-    dosageFreq: "Twice daily",
-    usageInfo: "Mix 10-20ml in a glass of water and consume on an empty stomach.",
-    bottlesSold: 'New'
+    dosage: '5 ml',
+    dosageFreq: 'Twice daily',
+    usageInfo: 'Shake well before use. Take 5 ml twice daily on an empty stomach. Can be diluted with lukewarm water. For best results, use regularly for at least 3 months.',
+    bottlesSold: '21,000+'
   }
 ];
 
@@ -54,7 +61,7 @@ export const REVIEWS: Review[] = [
     name: 'Sneha Kulkarni',
     location: 'Mumbai, Maharashtra',
     rating: 5,
-    text: "Effective and Genuine. This syrup has become a part of our daily routine.",
+    text: "Premium, effective and Authentic. This juice has become a part of our daily routine.",
     image: 'https://randomuser.me/api/portraits/women/44.jpg'
   },
   {
@@ -62,7 +69,7 @@ export const REVIEWS: Review[] = [
     name: 'Amol Deshmukh',
     location: 'Nashik, Maharashtra',
     rating: 5,
-    text: "Best product for sugar management. Great results with regular use.",
+    text: "Best Authentic product for immunity and wellness. Great results with regular use.",
     image: 'https://randomuser.me/api/portraits/men/67.jpg'
   }
 ];

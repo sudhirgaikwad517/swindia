@@ -103,14 +103,14 @@ const Home: React.FC<HomeProps> = ({ onAddToCart, wishlistItems = [], onToggleWi
             {/* Left Content Column */}
             <div className="col-span-7 space-y-3 text-left relative z-20 pr-4">
               <div className="inline-block border border-[#FE8B00] text-[#FE8B00] text-[8px] font-bold uppercase tracking-widest px-2.5 py-0.5 rounded-full font-sans mb-0.5">
-                Rooted in Tradition
+                Premium Himalayan Superfood
               </div>
               <h1 className="font-serif text-lg font-bold leading-tight">
-                Designed For <br />
-                <span className="text-[#FE8B00]">Modern Wellness.</span>
+                Sea Buckthorn <br />
+                <span className="text-[#FE8B00]">Himalayan Juice</span>
               </h1>
               <p className="text-white/80 text-[9px] leading-relaxed max-w-lg font-sans">
-                Swavalambi Sea Buckthorn Juice is a powerful blend of premium ingredients that help support immunity, skin health, and overall wellness effectively.
+                Nature's Power of Omega 3, 6, 7, 9 & Vitamin C. Supports immunity, skin health, energy, and heart wellness.
               </p>
 
               {/* 4 Feature Items */}
@@ -201,14 +201,14 @@ const Home: React.FC<HomeProps> = ({ onAddToCart, wishlistItems = [], onToggleWi
             {/* Left Content Column */}
             <div className="col-span-7 space-y-4 lg:space-y-6 text-left">
               <div className="inline-block border border-[#FE8B00] text-[#FE8B00] text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full font-sans mb-2">
-                Rooted in Tradition
+                Premium Himalayan Superfood
               </div>
               <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[58px] xl:text-[66px] font-bold leading-tight">
-                Designed For <br />
-                <span className="text-[#FE8B00]">Modern Wellness.</span>
+                Sea Buckthorn <br />
+                <span className="text-[#FE8B00]">Himalayan Juice</span>
               </h1>
               <p className="text-white/80 text-xs sm:text-sm lg:text-base xl:text-lg leading-relaxed max-w-xl font-sans">
-                Swavalambi Sea Buckthorn Juice is a powerful blend of premium ingredients that help support immunity, skin health, and overall wellness effectively.
+                Nature's Power of Omega 3, 6, 7, 9 & Vitamin C. Supports immunity, skin health, energy, and heart wellness.
               </p>
 
               {/* 4 Feature Items */}
@@ -556,7 +556,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart, wishlistItems = [], onToggleWi
                         {product.name}
                       </h3>
                       <p className="text-[10px] text-gray-500 font-medium font-sans mt-0.5">
-                        {product.id === 'p1' ? '900 ml' : product.id === 'p2' ? '60 Capsules' : product.id === 'p3' ? '100 ml' : 'Combo Pack'}
+                        {product.id === 'p1' ? '100 ml' : product.id === 'p2' ? '60 Capsules' : product.id === 'p3' ? '100 ml' : 'Combo Pack'}
                       </p>
                     </div>
                     
@@ -608,7 +608,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart, wishlistItems = [], onToggleWi
                         {product.name}
                       </h3>
                       <p className="text-[9px] text-gray-400 font-medium leading-none">
-                        {product.id === 'p1' ? '900 ml' : product.id === 'p2' ? '60 Capsules' : product.id === 'p3' ? '100 ml' : 'Combo Pack'}
+                        {product.id === 'p1' ? '100 ml' : product.id === 'p2' ? '60 Capsules' : product.id === 'p3' ? '100 ml' : 'Combo Pack'}
                       </p>
                     </div>
 
@@ -653,7 +653,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart, wishlistItems = [], onToggleWi
         <div className="container mx-auto px-4 lg:px-6 max-w-4xl grid grid-cols-3 gap-3 lg:gap-6 text-center">
           <div className="flex flex-col items-center justify-center space-y-1 font-sans">
             <Truck size={20} className="text-[#FE8B00] mb-1" />
-            <span className="text-[#092813] lg:text-white text-[10px] lg:text-xs leading-none font-bold tracking-wide">Free Shipping</span>
+            <span className="text-[#092813] lg:text-white text-[10px] lg:text-xs leading-none font-bold tracking-wide">FREE Delivery Across India</span>
             <span className="text-[8px] font-normal tracking-normal text-gray-500 lg:text-white/60 font-sans mt-0.5">On Prepaid Orders</span>
           </div>
           <div className="flex flex-col items-center justify-center space-y-1 font-sans border-l border-gray-200 lg:border-white/10">
