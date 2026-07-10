@@ -13,6 +13,7 @@ dist-ssr
 *.local
 .env
 .env.local
+public/api/gemini_config.php
 
 # Editor directories and files
 .vscode/*

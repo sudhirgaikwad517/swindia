@@ -1,42 +1,51 @@
-/* Swavalambi India Custom Styles */
-/* Tailwind is loaded via CDN in index.html, custom styles are managed inline. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-.hero-bg-animated {
-  background: #092813;
+@layer base {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #F9FDF9;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #FE8B00;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #092813;
+  }
 }
 
-@keyframes leafFloat1 {
-  0%, 100% { transform: translate(0, 0) rotate(12deg) scale(1); }
-  50% { transform: translate(12px, -15px) rotate(24deg) scale(1.05); }
-}
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 
-@keyframes leafFloat2 {
-  0%, 100% { transform: translate(0, 0) rotate(-45deg) scale(1); }
-  50% { transform: translate(-15px, 12px) rotate(-35deg) scale(0.95); }
-}
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 
-@keyframes leafFloat3 {
-  0%, 100% { transform: translate(0, 0) rotate(90deg) scale(1); }
-  50% { transform: translate(18px, -8px) rotate(100deg) scale(1.03); }
-}
+  .shape-blob {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
 
-@keyframes leafFloat4 {
-  0%, 100% { transform: translate(0, 0) rotate(30deg) scale(1); }
-  50% { transform: translate(-10px, -18px) rotate(20deg) scale(0.97); }
-}
+  .border-hand-drawn {
+    border: 2px solid #092813;
+    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  }
 
-.animate-leaf-1 {
-  animation: leafFloat1 7s ease-in-out infinite;
-}
+  .hero-bg-animated {
+    background: #092813;
+  }
 
-.animate-leaf-2 {
-  animation: leafFloat2 9s ease-in-out infinite;
-}
-
-.animate-leaf-3 {
-  animation: leafFloat3 11s ease-in-out infinite;
-}
-
-.animate-leaf-4 {
-  animation: leafFloat4 8s ease-in-out infinite;
+  .animate-fade-up-active {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
 }

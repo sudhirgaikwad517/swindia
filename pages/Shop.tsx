@@ -710,7 +710,7 @@ const Shop: React.FC<ShopProps> = ({ onAddToCart, wishlistItems = [], onToggleWi
 
       {/* 6. Floating Cart Drawer */}
       {totalCartCount > 0 && lastAddedItem && (
-        <div className="fixed bottom-[64px] left-0 right-0 z-40 px-4 animate-fade-in lg:hidden">
+        <div className="fixed bottom-4 left-0 right-0 z-40 px-4 animate-fade-in lg:hidden">
           <div className="bg-white border border-gray-250 rounded-full px-4 py-2.5 shadow-lg flex items-center justify-between max-w-md mx-auto">
             <div className="flex items-center gap-2">
               <div className="w-9 h-9 rounded-full bg-white border border-gray-155 flex items-center justify-center overflow-hidden shrink-0">

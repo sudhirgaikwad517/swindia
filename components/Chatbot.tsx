@@ -90,7 +90,7 @@ const Chatbot: React.FC = () => {
   return (
     <>
       {isOpen && (
-        <div className="fixed bottom-24 right-4 lg:bottom-24 lg:right-6 z-[60] w-[calc(100vw-2rem)] max-w-[360px] bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden flex flex-col font-sans">
+        <div className="fixed bottom-4 right-4 lg:bottom-6 lg:right-6 z-[60] w-[calc(100vw-2rem)] max-w-[360px] bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden flex flex-col font-sans">
           <div className="bg-[#092813] text-white px-4 py-3 flex items-center justify-between shrink-0">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-full bg-[#FE8B00]/20 border border-[#FE8B00]/40 flex items-center justify-center">
@@ -182,7 +182,7 @@ const Chatbot: React.FC = () => {
 
       <button
         onClick={() => setIsOpen((prev) => !prev)}
-        className={`fixed bottom-24 right-4 lg:bottom-6 lg:right-6 z-[60] w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 ${
+        className={`fixed bottom-4 right-4 lg:bottom-6 lg:right-6 z-[60] w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 ${
           isOpen
             ? 'bg-gray-700 text-white scale-95'
             : 'bg-[#FE8B00] text-[#061C0D] hover:bg-[#092813] hover:text-white hover:scale-105'

@@ -22,7 +22,6 @@ import TrackOrder from './pages/TrackOrder'; // Imported TrackOrder Page
 import Orders from './pages/Orders'; // Imported Orders Page
 import Profile from './pages/Profile'; // Imported Profile Page
 import MoreMenu from './pages/MoreMenu'; // Imported MoreMenu Page
-import MobileBottomNav from './components/MobileBottomNav'; // Imported MobileBottomNav Component
 import Chatbot from './components/Chatbot';
 
 import { CartItem, Product } from './types';
@@ -160,7 +159,6 @@ const AppContent = () => {
         </Routes>
       </main>
       <Footer />
-      <MobileBottomNav cartCount={cartCount} />
       <Chatbot />
     </div>
   );

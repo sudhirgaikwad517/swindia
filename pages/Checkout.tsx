@@ -23,13 +23,6 @@ interface CheckoutProps {
 }
 
 export const Checkout: React.FC<CheckoutProps> = ({ items, onClearCart }) => {
-  const reviewImages = [
-    "/assets/ss/img1.jpeg",
-    "/assets/ss/img2.jpeg",
-    "/assets/ss/img3.jpeg",
-    "/assets/ss/img4.jpeg",
-    "/assets/ss/img5.jpeg",
-  ];
   const [isProcessing, setIsProcessing] = useState(false);
   const [isRedirecting, setIsRedirecting] = useState(false);
   const [paymentMethod, setPaymentMethod] = useState("easebuzz");
@@ -414,26 +407,6 @@ export const Checkout: React.FC<CheckoutProps> = ({ items, onClearCart }) => {
                 <p>Email: care@swavalambiindia.com</p>
                 <p>Mon - Sat | 10:00 AM - 6:00 PM</p>
               </div>
-            </div>
-
-            {/* CUSTOMER REVIEWS */}
-            <div className="bg-white p-6 rounded-[28px] shadow-sm border border-gray-150 mt-6 text-left">
-              <h3 className="text-sm font-serif font-bold text-gray-900 mb-4">
-                Customer Reviews
-              </h3>
-              <div className="grid grid-cols-2 gap-3">
-                {reviewImages.map((img, index) => (
-                  <img
-                    key={index}
-                    src={img}
-                    alt="Customer Review"
-                    className="rounded-lg border border-gray-100 shadow-sm hover:scale-105 transition"
-                  />
-                ))}
-              </div>
-              <p className="text-[9px] text-gray-400 text-center mt-3 font-semibold font-sans">
-                Trusted by 10,000+ happy customers across India
-              </p>
             </div>
 
           </div>
