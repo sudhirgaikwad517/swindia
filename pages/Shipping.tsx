@@ -104,7 +104,7 @@ const Shipping = () => {
               <div>
                 <p className="font-bold text-swavalambi-dark">Swavalambi India Multitrade Private Limited</p>
                 <div className="mt-4 space-y-2">
-                    <p className="flex items-center gap-2 text-sm font-bold text-swavalambi-moss"><Phone size={16}/> +91 93739 86362</p>
+                    <p className="flex items-center gap-2 text-sm font-bold text-swavalambi-moss"><Phone size={16}/> +91 72727 7702</p>
                     <p className="flex items-center gap-2 text-sm font-bold text-swavalambi-moss"><Mail size={16}/> care@swavalambiindia.com</p>
                 </div>
               </div>

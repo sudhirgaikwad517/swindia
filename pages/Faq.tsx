@@ -194,7 +194,7 @@ const Faq: React.FC = () => {
               <div className="border-t border-gray-200/50 pt-4 space-y-2 text-[10.5px] font-bold text-gray-600 font-sans text-left px-2">
                 <div className="flex items-center gap-2">
                   <Phone size={13} className="text-[#092813]/70" />
-                  <span>+91 93739 86362</span>
+                  <span>+91 72727 7702</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Mail size={13} className="text-[#092813]/70" />

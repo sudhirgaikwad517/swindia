@@ -59,7 +59,7 @@ const ThankYou = () => {
         amount: '1598.00',
         customer: {
           email: 'care@swavalambiindia.com',
-          phone: '+91 93739 86362'
+          phone: '+91 72727 7702'
         },
         products: []
       });
@@ -82,7 +82,7 @@ const ThankYou = () => {
           amount: '1598.00',
           customer: {
             email: 'care@swavalambiindia.com',
-            phone: '+91 93739 86362'
+            phone: '+91 72727 7702'
           },
           products: []
         });
@@ -238,7 +238,7 @@ const ThankYou = () => {
                     <div className="border-t border-gray-100 pt-4 space-y-2 text-[11px] text-gray-600 font-medium font-sans">
                       <span className="block text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-1.5">Confirmation Details</span>
                       <p className="flex items-center gap-2 text-gray-500"><Mail size={13} className="text-[#092813] shrink-0" /> {orderData.customer?.email || 'care@swavalambiindia.com'}</p>
-                      <p className="flex items-center gap-2 text-gray-500"><Phone size={13} className="text-[#092813] shrink-0" /> {orderData.customer?.phone || '+91 93739 86362'}</p>
+                      <p className="flex items-center gap-2 text-gray-500"><Phone size={13} className="text-[#092813] shrink-0" /> {orderData.customer?.phone || '+91 72727 7702'}</p>
                     </div>
                   </div>
 

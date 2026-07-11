@@ -403,7 +403,7 @@ export const Checkout: React.FC<CheckoutProps> = ({ items, onClearCart }) => {
                 <p className="text-[10px] text-gray-500 font-semibold">We are here to assist you with your order.</p>
               </div>
               <div className="space-y-2 text-[10.5px] font-bold text-gray-600 font-sans">
-                <p>Call / WhatsApp: +91 93739 86362</p>
+                <p>Call / WhatsApp: +91 72727 7702</p>
                 <p>Email: care@swavalambiindia.com</p>
                 <p>Mon - Sat | 10:00 AM - 6:00 PM</p>
               </div>

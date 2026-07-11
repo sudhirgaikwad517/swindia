@@ -134,34 +134,61 @@ export const TRUST_PILLARS = [
   { title: 'Trusted by Thousands', desc: '10,000+ happy customers trust Swavalambi India for their wellness journey.' },
 ];
 
+/** Vertical customer videos for reels-style slider (no likes/share UI) */
+export const CUSTOMER_VIDEOS = [
+  { id: 'v1', src: '/assets/content/videos/st%201.mp4', label: 'Customer story 1' },
+  { id: 'v2', src: '/assets/content/videos/st2%20Copy.mp4', label: 'Customer story 2' },
+  { id: 'v3', src: '/assets/content/videos/st%203.mp4', label: 'Customer story 3' },
+];
+
 export const CUSTOMER_REVIEWS = [
   {
-    name: 'Rajesh S.',
+    name: 'Priya M.',
+    city: 'Mumbai, Maharashtra',
+    title: 'Premium Packaging & Pure Taste',
+    text: 'Received the box and bottle in perfect condition. The Ladakh Sea Buckthorn tastes pure and natural — rich in Vitamin C. Happy with my purchase!',
+    rating: 5,
+    image: '/assets/content/customer_review_img/r1.jpeg',
+  },
+  {
+    name: 'Rohit S.',
     city: 'Pune, Maharashtra',
-    title: 'More Energy & Better Wellness',
-    text: "I've been drinking Swavalambi's Sea Buckthorn Juice for 3 weeks and I feel more energetic, active and fresh throughout the day.",
+    title: 'Omega Rich & Daily Energy',
+    text: 'Using it daily for 3 weeks. Omega 3, 6, 7 & 9 really help — I feel more energetic and my immunity feels stronger. Measuring cup on the bottle is very handy.',
     rating: 5,
+    image: '/assets/content/customer_review_img/r2.jpeg',
   },
   {
-    name: 'Meena R.',
+    name: 'Ankit P.',
+    city: 'Nagpur, Maharashtra',
+    title: 'Genuine Product, Fast Delivery',
+    text: 'Was looking for authentic Ladakh Sea Buckthorn online. This one feels genuine. Packaging is solid and the concentrate quality is excellent. Highly recommend!',
+    rating: 5,
+    image: '/assets/content/customer_review_img/r3.jpeg',
+  },
+  {
+    name: 'Neha K.',
     city: 'Bengaluru, Karnataka',
-    title: 'Natural & 100% Effective',
-    text: "I love that it's 100% natural and free from side effects. My digestion has improved and I feel lighter and healthier.",
-    rating: 5,
-  },
-  {
-    name: 'Amit K.',
-    city: 'Ahmedabad, Gujarat',
-    title: 'Great Support for Immunity',
-    text: 'This juice has become a part of my daily routine. It supports my immunity and keeps me strong every day.',
+    title: 'Trusted Brand for Wellness',
+    text: 'Swavalambi India packaging looks premium and vegan-friendly. Tangy natural taste, no artificial flavour. Perfect for my morning wellness routine.',
     rating: 4,
+    image: '/assets/content/customer_review_img/r4.jpeg',
   },
   {
-    name: 'Sunita D.',
-    city: 'Lucknow, Uttar Pradesh',
-    title: 'Trusted & Reliable Brand',
-    text: 'Swavalambi India is a brand I can trust. Pure ingredients and amazing results. Highly recommended!',
+    name: 'Kavita D.',
+    city: 'Indore, Madhya Pradesh',
+    title: 'Family Favourite Now',
+    text: 'Whole family has started taking this juice. Skin feels better and energy levels are up. Love that it is a premium product of Ladakh — pure from nature!',
     rating: 5,
+    image: '/assets/content/customer_review_img/r6.jpeg',
+  },
+  {
+    name: 'Suresh R.',
+    city: 'Hyderabad, Telangana',
+    title: 'Worth Every Rupee',
+    text: '500ml bottle lasts well. Great Vitamin C boost and no side effects. Packaging looks classy and the product feels fresh. Will order again.',
+    rating: 4,
+    image: '/assets/content/customer_review_img/r7.jpeg',
   },
 ];
 

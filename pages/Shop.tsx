@@ -773,7 +773,7 @@ const Shop: React.FC<ShopProps> = ({ onAddToCart, wishlistItems = [], onToggleWi
                   type="tel" 
                   name="phone"
                   required 
-                  placeholder="e.g. 9373986362"
+                  placeholder="e.g. 9172727702"
                   className="w-full px-3.5 py-2.5 text-xs rounded-lg border border-gray-255 bg-white focus:outline-none focus:border-[#092813] font-sans font-semibold text-gray-800"
                 />
               </div>

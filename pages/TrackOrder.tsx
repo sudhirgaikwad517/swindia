@@ -302,7 +302,7 @@ const TrackOrder = () => {
             <div className="flex flex-col items-center p-2">
               <span className="w-10 h-10 rounded-full bg-[#EBF1E6] flex items-center justify-center text-[#092813] mb-3"><Phone size={18} /></span>
               <h5 className="font-bold text-xs text-swavalambi-dark">Call Us</h5>
-              <p className="text-[10px] text-[#092813] font-bold mt-1">+91 93739 86362</p>
+              <p className="text-[10px] text-[#092813] font-bold mt-1">+91 72727 7702</p>
               <p className="text-[8px] text-swavalambi-stone leading-tight mt-0.5">Mon - Sat | 10 AM - 6 PM</p>
             </div>
 

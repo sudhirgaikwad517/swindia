@@ -28,7 +28,7 @@ const Profile = () => {
           </div>
           <div className="flex-1 min-w-0">
             <h3 className="font-serif font-bold text-base text-swavalambi-dark leading-tight">Neha Sharma</h3>
-            <p className="text-[10px] text-swavalambi-stone font-semibold mt-0.5">+91 93739 86362</p>
+            <p className="text-[10px] text-swavalambi-stone font-semibold mt-0.5">+91 72727 7702</p>
             <p className="text-[10px] text-swavalambi-stone font-semibold">neha@gmail.com</p>
           </div>
           <button 

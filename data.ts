@@ -18,7 +18,13 @@ export const PRODUCTS: Product[] = [
     rating: 4.4,
     reviews: 2100,
     image: '/assets/content/image-Photoroom%20(21).png',
-    gallery: ['/assets/content/image-Photoroom%20(21).png'],
+    gallery: [
+      '/assets/content/image-Photoroom%20(21).png',
+      '/assets/content/product_sebuk/img1.jpeg',
+      '/assets/content/product_sebuk/img2.jpeg',
+      '/assets/content/product_sebuk/img3.jpeg',
+      '/assets/content/product_sebuk/img4.jpeg',
+    ],
    
     category: 'Juices & Tonics',
     badges: ['BESTSELLER'],

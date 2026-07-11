@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { PRODUCTS } from '../data';
-import { SEA_BUCKTHORN_FAQS, WHY_CHOOSE_BENEFITS_LEFT, WHY_CHOOSE_BENEFITS_RIGHT, INGREDIENTS_STORY, HOW_IT_WORKS_STEPS, TRUST_PILLARS, CUSTOMER_REVIEWS, KEY_WELLNESS_BENEFITS, REVIEW_SUMMARY } from '../productContent';
+import { SEA_BUCKTHORN_FAQS, WHY_CHOOSE_BENEFITS_LEFT, WHY_CHOOSE_BENEFITS_RIGHT, INGREDIENTS_STORY, HOW_IT_WORKS_STEPS, TRUST_PILLARS, CUSTOMER_REVIEWS, KEY_WELLNESS_BENEFITS, REVIEW_SUMMARY, CUSTOMER_VIDEOS } from '../productContent';
 import { Product } from '../types';
 import { 
   Star, Heart, Minus, Plus, CheckCircle, Truck, ShieldCheck, Leaf,
   FlaskConical, Sparkles, ArrowRight, Clock, Info, Scale, Zap, Droplet, 
-  ShoppingBag, Sprout, Play, Shield, MessageCircle, ChevronDown, ChevronLeft, ChevronRight, User, Package, Check,
+  ShoppingBag, Sprout, Shield, MessageCircle, ChevronDown, ChevronLeft, ChevronRight, User, Package, Check,
   ArrowUpDown
 } from 'lucide-react';
 
@@ -51,6 +51,8 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
     : [];
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const [showStickyBar, setShowStickyBar] = useState(false);
+  const videoRefs = useRef<Record<string, HTMLVideoElement | null>>({});
+  const videoScrollRef = useRef<HTMLDivElement>(null);
   
   const [showPrebookModal, setShowPrebookModal] = useState(false);
   const [prebookLoading, setPrebookLoading] = useState(false);
@@ -111,26 +113,32 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
     const swipeThreshold = 50;
 
     if (Math.abs(diffX) > swipeThreshold) {
-      const currentIdx = galleryImages.indexOf(mainImage);
-      if (diffX > 0) {
-        const nextIdx = (currentIdx + 1) % galleryImages.length;
-        setMainImage(galleryImages[nextIdx]);
-      } else {
-        const prevIdx = (currentIdx - 1 + galleryImages.length) % galleryImages.length;
-        setMainImage(galleryImages[prevIdx]);
-      }
+      if (diffX > 0) goNextImage();
+      else goPrevImage();
     }
     touchStartX.current = null;
     touchEndX.current = null;
+  };
+
+  const goNextImage = () => {
+    if (!galleryImages.length) return;
+    const currentIdx = galleryImages.indexOf(mainImage);
+    const nextIdx = (currentIdx + 1) % galleryImages.length;
+    setMainImage(galleryImages[nextIdx]);
+  };
+
+  const goPrevImage = () => {
+    if (!galleryImages.length) return;
+    const currentIdx = galleryImages.indexOf(mainImage);
+    const prevIdx = (currentIdx - 1 + galleryImages.length) % galleryImages.length;
+    setMainImage(galleryImages[prevIdx]);
   };
 
   // Auto-advance gallery image every 5 seconds (resetting timer on interaction)
   useEffect(() => {
     if (!galleryImages || galleryImages.length <= 1) return;
     const interval = setInterval(() => {
-      const currentIdx = galleryImages.indexOf(mainImage);
-      const nextIdx = (currentIdx + 1) % galleryImages.length;
-      setMainImage(galleryImages[nextIdx]);
+      goNextImage();
     }, 5000);
 
     return () => clearInterval(interval);
@@ -277,6 +285,27 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
                   alt={product.name} 
                   className="absolute inset-0 w-full h-full object-cover object-center animate-smooth-fade" 
                 />
+
+                {galleryImages.length > 1 && (
+                  <>
+                    <button
+                      type="button"
+                      onClick={(e) => { e.stopPropagation(); goPrevImage(); }}
+                      className="absolute left-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-black/40 hover:bg-black/60 text-white flex items-center justify-center backdrop-blur-sm transition-colors cursor-pointer"
+                      aria-label="Previous image"
+                    >
+                      <ChevronLeft size={18} />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={(e) => { e.stopPropagation(); goNextImage(); }}
+                      className="absolute right-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-black/40 hover:bg-black/60 text-white flex items-center justify-center backdrop-blur-sm transition-colors cursor-pointer"
+                      aria-label="Next image"
+                    >
+                      <ChevronRight size={18} />
+                    </button>
+                  </>
+                )}
 
                 {/* Overlapping gold bestseller / coming soon badge */}
                 {product.isUpcoming ? (
@@ -526,7 +555,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
                 <button 
                   onClick={() => {
                     const text = `*New Inquiry:* I want to order ${product.name} (${selectedSize}) x ${quantity}.`;
-                    window.open(`https://wa.me/919373986362?text=${encodeURIComponent(text)}`, '_blank');
+                    window.open(`https://wa.me/9172727702?text=${encodeURIComponent(text)}`, '_blank');
                   }}
                   className="w-full border border-[#092813] text-[#092813] hover:bg-[#092813]/5 rounded-xl font-bold text-xs uppercase tracking-wider py-3.5 flex items-center justify-center gap-2 shadow-sm active:scale-95 transition-all cursor-pointer"
                 >
@@ -984,7 +1013,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
                 <div className="flex items-center justify-between border-t border-gray-100 mt-6 pt-4 text-xs font-bold font-sans">
                   <span className="text-gray-500">Still have questions?</span>
                   <button 
-                    onClick={() => window.open('https://wa.me/919373986362?text=I%20have%20questions%20about%20Hair%20Vitalizer', '_blank')}
+                    onClick={() => window.open('https://wa.me/9172727702?text=I%20have%20questions%20about%20Hair%20Vitalizer', '_blank')}
                     className="bg-[#25D366] text-white border border-[#25D366] rounded-xl font-bold py-1.5 px-3 flex items-center gap-1 hover:bg-white hover:text-[#25D366] transition-all text-[10px]"
                   >
                     <MessageCircle size={12} className="fill-white" />
@@ -1332,6 +1361,57 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
                 </p>
               </div>
 
+              {/* Customer videos — reels-style horizontal slider, all autoplay muted */}
+              {CUSTOMER_VIDEOS.length > 0 && (
+                <div className="relative mb-8">
+                  <div className="flex items-center justify-between mb-3">
+                    <h3 className="text-xs font-black text-[#092813] uppercase tracking-widest">Customer Videos</h3>
+                  </div>
+                  <div className="relative">
+                    <div
+                      ref={videoScrollRef}
+                      className="flex gap-3 overflow-x-auto pb-2 scroll-smooth snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+                    >
+                      {CUSTOMER_VIDEOS.map((vid) => (
+                        <div
+                          key={vid.id}
+                          className="relative shrink-0 w-[42%] sm:w-[28%] lg:w-[18%] aspect-[9/16] rounded-xl overflow-hidden bg-black snap-start border border-gray-200 shadow-sm"
+                        >
+                          <video
+                            ref={(node) => {
+                              videoRefs.current[vid.id] = node;
+                              if (node) {
+                                node.muted = true;
+                                node.play().catch(() => {});
+                              }
+                            }}
+                            src={vid.src}
+                            className="absolute inset-0 w-full h-full object-cover"
+                            autoPlay
+                            playsInline
+                            muted
+                            loop
+                            preload="auto"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                    {CUSTOMER_VIDEOS.length > 2 && (
+                      <button
+                        type="button"
+                        onClick={() => {
+                          videoScrollRef.current?.scrollBy({ left: 180, behavior: 'smooth' });
+                        }}
+                        className="hidden sm:flex absolute -right-2 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-white border border-gray-200 shadow-md items-center justify-center text-gray-600 hover:text-[#092813] cursor-pointer"
+                        aria-label="Next videos"
+                      >
+                        <ChevronRight size={18} />
+                      </button>
+                    )}
+                  </div>
+                </div>
+              )}
+
               {/* Review summary bar — soft green theme */}
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
                 <div className="flex items-center gap-2.5 flex-wrap">
@@ -1354,7 +1434,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
                 </div>
                 <button
                   type="button"
-                  onClick={() => window.open('https://wa.me/919373986362?text=Hi%2C%20I%20want%20to%20share%20a%20review%20for%20Sea%20Buckthorn%20Juice.', '_blank')}
+                  onClick={() => window.open('https://wa.me/9172727702?text=Hi%2C%20I%20want%20to%20share%20a%20review%20for%20Sea%20Buckthorn%20Juice.', '_blank')}
                   className="bg-[#96C77E] hover:bg-[#86b56e] text-white text-xs font-bold px-4 py-2 rounded-lg transition-colors cursor-pointer self-start sm:self-auto"
                 >
                   Write A Review
@@ -1379,24 +1459,42 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
                 ))}
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                {CUSTOMER_REVIEWS.map((rev, idx) => (
-                  <div key={idx} className="bg-white border border-gray-100 rounded-2xl p-5 flex flex-col justify-between text-left hover:shadow-md transition-shadow">
-                    <div>
-                      <div className="flex text-[#96C77E] gap-0.5 mb-3">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} size={10} className={i < (rev.rating ?? 5) ? 'fill-current' : 'text-gray-200 fill-gray-200'} />
-                        ))}
+              <div className="relative">
+                <div className="flex gap-4 overflow-x-auto pb-3 scroll-smooth snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                  {CUSTOMER_REVIEWS.map((rev, idx) => (
+                    <div
+                      key={idx}
+                      className="bg-white border border-gray-100 rounded-2xl overflow-hidden flex flex-col text-left hover:shadow-md transition-shadow snap-start shrink-0 w-[78%] sm:w-[46%] lg:w-[32%]"
+                    >
+                      {rev.image && (
+                        <div className="aspect-[4/3] bg-[#F7F9F2] overflow-hidden">
+                          <img
+                            src={rev.image}
+                            alt={`${rev.name} review photo`}
+                            className="w-full h-full object-cover"
+                            loading="lazy"
+                          />
+                        </div>
+                      )}
+                      <div className="p-4 flex flex-col flex-1 justify-between min-h-[140px]">
+                        <div>
+                          <div className="flex text-[#96C77E] gap-0.5 mb-2">
+                            {[...Array(5)].map((_, i) => (
+                              <Star key={i} size={10} className={i < (rev.rating ?? 5) ? 'fill-current' : 'text-gray-200 fill-gray-200'} />
+                            ))}
+                          </div>
+                          <h4 className="text-xs font-black text-gray-900 leading-snug mb-1">{rev.title}</h4>
+                          <p className="text-[10px] text-gray-550 leading-relaxed font-medium line-clamp-3">"{rev.text}"</p>
+                        </div>
+                        <div className="border-t border-gray-150 pt-3 mt-3 flex flex-col">
+                          <span className="text-[10px] font-black text-gray-900">{rev.name}</span>
+                          <span className="text-[8px] text-gray-400 font-bold">{rev.city}</span>
+                        </div>
                       </div>
-                      <h4 className="text-xs font-black text-gray-900 leading-snug mb-1">{rev.title}</h4>
-                      <p className="text-[10px] text-gray-550 leading-relaxed font-medium">"{rev.text}"</p>
                     </div>
-                    <div className="border-t border-gray-150 pt-3 mt-4 flex flex-col">
-                      <span className="text-[10px] font-black text-gray-900">{rev.name}</span>
-                      <span className="text-[8px] text-gray-400 font-bold">{rev.city}</span>
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
+                <p className="text-[9px] text-gray-400 font-semibold mt-1 text-center sm:hidden">← Swipe for more reviews →</p>
               </div>
 
               <div className="bg-[#FAF4EB] border border-[#FE8B00]/25 rounded-2xl p-5 mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-left">
@@ -1580,7 +1678,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
                   type="tel" 
                   name="phone"
                   required 
-                  placeholder="e.g. 9373986362"
+                  placeholder="e.g. 9172727702"
                   className="w-full px-3.5 py-2.5 text-xs rounded-lg border border-gray-255 bg-white focus:outline-none focus:border-[#092813] font-sans font-semibold text-gray-800"
                 />
               </div>

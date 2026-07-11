@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { X, Send, Loader2 } from 'lucide-react';
 import { getGeminiReply, isGeminiConfigured, GeminiChatTurn } from '../services/geminiChat';
 
-const WHATSAPP_NUMBER = '919373986362';
+const WHATSAPP_NUMBER = '9172727702';
 
 type ChatMessage = {
   id: number;
@@ -95,7 +95,7 @@ const Chatbot: React.FC = () => {
             <div className="flex items-center gap-3">
               <div className="relative w-10 h-10 shrink-0 rounded-full overflow-hidden">
                 <img
-                  src="/assets/content/chatbot-avatar.png"
+                  src="/assets/chat_icon/chatboticon.png"
                   alt="Swavalambi Assistant"
                   className="w-full h-full object-cover"
                 />
@@ -187,19 +187,19 @@ const Chatbot: React.FC = () => {
 
       <button
         onClick={() => setIsOpen((prev) => !prev)}
-        className={`fixed bottom-4 right-4 lg:bottom-6 lg:right-6 z-[60] transition-all duration-300 ${
+        className={`fixed bottom-10 right-8 lg:bottom-12 lg:right-10 z-[60] transition-all duration-300 ${
           isOpen ? 'scale-95' : 'hover:scale-105'
         }`}
         aria-label={isOpen ? 'Close chat' : 'Open chat'}
       >
         {isOpen ? (
-          <span className="w-14 h-14 rounded-full bg-gray-700 text-white shadow-lg flex items-center justify-center">
-            <X size={24} />
+          <span className="w-16 h-16 rounded-full bg-gray-700 text-white shadow-lg flex items-center justify-center">
+            <X size={26} />
           </span>
         ) : (
-          <span className="block w-14 h-14 rounded-full overflow-hidden shadow-lg">
+          <span className="block w-16 h-16 rounded-full overflow-hidden shadow-lg">
             <img
-              src="/assets/content/chatbot-avatar.png"
+              src="/assets/chat_icon/chatboticon.png"
               alt="Chat with us"
               className="w-full h-full object-cover"
             />

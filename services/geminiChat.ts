@@ -18,7 +18,7 @@ Benefits: ${product.benefits.join(', ')}
 Dosage: ${product.dosage}, ${product.dosageFreq}
 Usage: ${product.usageInfo}
 Shipping: FREE delivery across India, COD available
-WhatsApp: +91 93739 86362
+WhatsApp: +91 72727 7702 (9172727702)
 
 Reply in 2-3 short sentences. Match user's language (English/Hindi/Marathi). No medical cure claims.`;
 

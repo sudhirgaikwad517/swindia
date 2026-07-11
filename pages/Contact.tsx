@@ -24,8 +24,8 @@ const Contact = () => {
     const { name, email, phone, subject, message } = formData;
     const text = `*New Inquiry from Website*\n\n*Name:* ${name}\n*Email:* ${email}\n*Phone:* ${phone}\n*Subject:* ${subject}\n*Message:* ${message}`;
     
-    // WhatsApp API URL (Phone: 919373986362)
-    const phoneNumber = "919373986362";
+    // WhatsApp API URL (Phone: 9172727702)
+    const phoneNumber = "9172727702";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
     
     // Open WhatsApp in a new tab
@@ -135,7 +135,7 @@ const Contact = () => {
                   </div>
                   <div className="font-sans leading-tight">
                     <h4 className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Call Us</h4>
-                    <span className="text-xs font-bold text-gray-800 block mt-0.5">+91 93739 86362</span>
+                    <span className="text-xs font-bold text-gray-800 block mt-0.5">+91 72727 7702</span>
                     <span className="text-[9px] text-gray-400 font-semibold block mt-0.5">Mon – Sat | 10:00 AM – 6:00 PM</span>
                   </div>
                 </div>
@@ -152,7 +152,7 @@ const Contact = () => {
                   </div>
                   <div className="font-sans leading-tight">
                     <h4 className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">WhatsApp Us</h4>
-                    <span className="text-xs font-bold text-gray-800 block mt-0.5">+91 93739 86362</span>
+                    <span className="text-xs font-bold text-gray-800 block mt-0.5">+91 72727 7702</span>
                     <span className="text-[9px] text-gray-400 font-semibold block mt-0.5">Mon – Sat | 10:00 AM – 6:00 PM</span>
                   </div>
                 </div>
