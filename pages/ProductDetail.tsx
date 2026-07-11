@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { PRODUCTS } from '../data';
-import { SEA_BUCKTHORN_FAQS, WHY_CHOOSE_BENEFITS_LEFT, WHY_CHOOSE_BENEFITS_RIGHT, INGREDIENTS_STORY, HOW_IT_WORKS_STEPS, TRUST_PILLARS, CUSTOMER_REVIEWS, KEY_WELLNESS_BENEFITS } from '../productContent';
+import { SEA_BUCKTHORN_FAQS, WHY_CHOOSE_BENEFITS_LEFT, WHY_CHOOSE_BENEFITS_RIGHT, INGREDIENTS_STORY, HOW_IT_WORKS_STEPS, TRUST_PILLARS, CUSTOMER_REVIEWS, KEY_WELLNESS_BENEFITS, REVIEW_SUMMARY } from '../productContent';
 import { Product } from '../types';
 import { 
   Star, Heart, Minus, Plus, CheckCircle, Truck, ShieldCheck, Leaf,
@@ -35,7 +35,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
 
   const getInitialSize = () => {
     if (!product) return 'Standard';
-    if (product.id === 'p1') return '100ml';
+    if (product.id === 'p1') return '500ml';
     if (product.id === 'p2') return '60 Caps';
     if (product.id === 'p3') return '100ml';
     if (product.id === 'p4') return '900ml+60cap';
@@ -148,7 +148,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
   useEffect(() => {
     if (product) {
       setMainImage(product.image);
-      if (product.id === 'p1') setSelectedSize('100ml');
+      if (product.id === 'p1') setSelectedSize('500ml');
       else if (product.id === 'p2') setSelectedSize('60 Caps');
       else if (product.id === 'p3') setSelectedSize('100ml');
       else if (product.id === 'p4') setSelectedSize('900ml+60cap');
@@ -230,11 +230,11 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
       {/* Smooth Image Carousel Transitions */}
       <style>{`
         @keyframes smoothFadeIn {
-          from { opacity: 0.5; transform: scale(0.97); }
-          to { opacity: 1; transform: scale(1); }
+          from { opacity: 0.4; }
+          to { opacity: 1; }
         }
         .animate-smooth-fade {
-          animation: smoothFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+          animation: smoothFadeIn 0.35s ease-out forwards;
         }
       `}</style>
       
@@ -252,30 +252,30 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
       </div>
 
       {/* Main Container */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="max-w-6xl mx-auto sm:px-6">
         
         {/* ========================================================================= */}
         {/* UPPER MAIN PRODUCT SECTION */}
         {/* ========================================================================= */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 bg-white border border-gray-150 rounded-3xl p-5 lg:p-8 shadow-sm">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 lg:gap-8 bg-transparent lg:bg-white border-0 lg:border lg:border-gray-150 rounded-none lg:rounded-3xl p-0 lg:p-8 lg:shadow-sm">
           
-          {/* LEFT: Image Gallery (5 cols) */}
+          {/* LEFT: Image Gallery — full-bleed on mobile like hero */}
           <div className="lg:col-span-5 flex flex-col gap-3">
             
-            {/* Large central image wrapper (1:1 Ratio) */}
+            {/* Large central image wrapper — edge-to-edge fill */}
             <div className="w-full">
               <div 
                 onTouchStart={handleTouchStart}
                 onTouchMove={handleTouchMove}
                 onTouchEnd={handleTouchEnd}
-                className="w-full aspect-square bg-[#F9FDF9] border border-gray-100 rounded-2xl flex flex-col items-center justify-center p-4 relative group/tooltip cursor-pointer shadow-sm overflow-hidden"
+                className="w-full aspect-square bg-[#092813] border-0 lg:border lg:border-[#092813]/20 rounded-none lg:rounded-2xl relative group/tooltip cursor-pointer overflow-hidden"
               >
                 
                 <img 
                   key={mainImage} 
                   src={mainImage} 
                   alt={product.name} 
-                  className="w-full h-full object-contain max-h-[420px] animate-smooth-fade" 
+                  className="absolute inset-0 w-full h-full object-cover object-center animate-smooth-fade" 
                 />
 
                 {/* Overlapping gold bestseller / coming soon badge */}
@@ -330,7 +330,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
           </div>
 
           {/* RIGHT: Buy Panel Information (7 cols) */}
-          <div className="lg:col-span-7 text-left space-y-4 font-sans">
+          <div className="lg:col-span-7 text-left space-y-4 font-sans px-4 sm:px-0 pt-5 lg:pt-0 bg-white lg:bg-transparent">
             
             <div className="space-y-1">
               <span className="bg-[#FE8B00] text-[#061C0D] text-[7.5px] font-bold tracking-widest uppercase px-2 py-0.5 rounded font-sans">
@@ -461,7 +461,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
                 <div className="flex gap-3 justify-center">
                   {[
                     { 
-                      label: product.id === 'p1' ? '100ml' 
+                      label: product.id === 'p1' ? '500ml' 
                              : product.id === 'p2' ? '60 Caps' 
                              : product.id === 'p3' ? '100ml' 
                              : product.id === 'p4' ? '900ml+60cap' 
@@ -539,7 +539,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
           </div>
 
           {/* FULL WIDTH ROW: Trust Badges (8 items spanning desktop width) */}
-          <div className="lg:col-span-12 border-t border-gray-100 pt-5 mt-4 grid grid-cols-2 sm:grid-cols-4 lg:flex lg:flex-wrap lg:items-center lg:justify-between gap-4 text-[8.5px] lg:text-[9.5px] font-bold text-gray-500 uppercase tracking-widest font-sans text-left">
+          <div className="lg:col-span-12 border-t border-gray-100 pt-5 mt-4 px-4 sm:px-0 grid grid-cols-2 sm:grid-cols-4 lg:flex lg:flex-wrap lg:items-center lg:justify-between gap-4 text-[8.5px] lg:text-[9.5px] font-bold text-gray-500 uppercase tracking-widest font-sans text-left">
             {product.id === 'p1' ? (
               <>
                 <span className="flex items-center gap-1.5"><Leaf size={12} className="text-[#FE8B00] shrink-0" /> 100% Natural</span>
@@ -565,6 +565,9 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
             )}
           </div>
         </div>
+
+        {/* Content below product hero — restore mobile side padding */}
+        <div className="px-4 sm:px-0">
 
         {/* BENEFITS ICON BAR */}
         <div className="bg-[#FAF4EB] border border-[#FE8B00]/25 rounded-2xl py-3 px-6 mt-6 flex flex-wrap justify-between items-center gap-4 text-xs font-bold text-gray-700 font-sans shadow-sm">
@@ -1316,7 +1319,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
             </section>
 
             {/* 6. LOVED BY CUSTOMERS */}
-            <section className="bg-white border border-gray-150 rounded-3xl p-6 md:p-10 shadow-sm mt-8">
+            <section className="bg-[#F7F9F2] border border-gray-150 rounded-3xl p-6 md:p-10 shadow-sm mt-8">
               <div className="text-center max-w-2xl mx-auto mb-8">
                 <span className="bg-[#EBF1E6] border border-[#092813]/15 text-[#092813] text-[10px] font-black tracking-widest px-3 py-1 rounded-full uppercase">
                   Our Happy Customers
@@ -1329,32 +1332,60 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 bg-[#F9FDF9] border border-gray-100 rounded-2xl p-5 mb-8 text-center">
-                <div>
-                  <span className="block text-2xl font-black text-[#092813]">4.8 / 5</span>
-                  <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">2,500+ Reviews</span>
+              {/* Review summary bar — soft green theme */}
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+                <div className="flex items-center gap-2.5 flex-wrap">
+                  <div className="flex items-center gap-0.5">
+                    {[1, 2, 3, 4, 5].map((s) => {
+                      const fill = Math.min(1, Math.max(0, REVIEW_SUMMARY.rating - (s - 1)));
+                      return (
+                        <span key={s} className="relative inline-block w-4 h-4">
+                          <Star size={16} className="absolute inset-0 text-gray-200 fill-gray-200" />
+                          <span className="absolute inset-0 overflow-hidden" style={{ width: `${fill * 100}%` }}>
+                            <Star size={16} className="text-[#96C77E] fill-[#96C77E]" />
+                          </span>
+                        </span>
+                      );
+                    })}
+                  </div>
+                  <span className="text-sm font-bold text-gray-800">
+                    {REVIEW_SUMMARY.total.toLocaleString()} Reviews
+                  </span>
                 </div>
-                <div>
-                  <span className="block text-2xl font-black text-[#092813]">3,750+</span>
-                  <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Happy Customers</span>
-                </div>
-                <div>
-                  <span className="block text-2xl font-black text-[#092813]">98%</span>
-                  <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Satisfaction Rate</span>
-                </div>
-                <div>
-                  <span className="block text-2xl font-black text-[#092813]">21,000+</span>
-                  <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Bottles Sold</span>
-                </div>
+                <button
+                  type="button"
+                  onClick={() => window.open('https://wa.me/919373986362?text=Hi%2C%20I%20want%20to%20share%20a%20review%20for%20Sea%20Buckthorn%20Juice.', '_blank')}
+                  className="bg-[#96C77E] hover:bg-[#86b56e] text-white text-xs font-bold px-4 py-2 rounded-lg transition-colors cursor-pointer self-start sm:self-auto"
+                >
+                  Write A Review
+                </button>
+              </div>
+
+              {/* Rating breakdown bars */}
+              <div className="space-y-2 mb-8 max-w-xl">
+                {REVIEW_SUMMARY.breakdown.map((row) => (
+                  <div key={row.stars} className="flex items-center gap-2.5 text-xs">
+                    <span className="w-3 text-gray-700 font-bold tabular-nums">{row.stars}</span>
+                    <Star size={12} className="text-[#96C77E] fill-[#96C77E] shrink-0" />
+                    <div className="flex-1 h-2.5 rounded-full bg-gray-200/70 overflow-hidden">
+                      <div
+                        className="h-full rounded-full bg-[#96C77E] transition-all"
+                        style={{ width: `${row.percent}%` }}
+                      />
+                    </div>
+                    <span className="w-10 text-right text-gray-700 font-semibold tabular-nums">{row.count}</span>
+                    <span className="w-10 text-right text-[#96C77E] font-semibold tabular-nums">({row.percent}%)</span>
+                  </div>
+                ))}
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                 {CUSTOMER_REVIEWS.map((rev, idx) => (
-                  <div key={idx} className="bg-[#F9FDF9] border border-gray-100 rounded-2xl p-5 flex flex-col justify-between text-left hover:shadow-md transition-shadow">
+                  <div key={idx} className="bg-white border border-gray-100 rounded-2xl p-5 flex flex-col justify-between text-left hover:shadow-md transition-shadow">
                     <div>
-                      <div className="flex text-[#FE8B00] gap-0.5 mb-3">
+                      <div className="flex text-[#96C77E] gap-0.5 mb-3">
                         {[...Array(5)].map((_, i) => (
-                          <Star key={i} size={10} className="fill-current" />
+                          <Star key={i} size={10} className={i < (rev.rating ?? 5) ? 'fill-current' : 'text-gray-200 fill-gray-200'} />
                         ))}
                       </div>
                       <h4 className="text-xs font-black text-gray-900 leading-snug mb-1">{rev.title}</h4>
@@ -1462,6 +1493,8 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
             </button>
           </div>
         </div>
+
+        </div>{/* end mobile padding wrapper */}
 
       </div>
 

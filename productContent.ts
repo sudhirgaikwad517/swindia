@@ -140,26 +140,44 @@ export const CUSTOMER_REVIEWS = [
     city: 'Pune, Maharashtra',
     title: 'More Energy & Better Wellness',
     text: "I've been drinking Swavalambi's Sea Buckthorn Juice for 3 weeks and I feel more energetic, active and fresh throughout the day.",
+    rating: 5,
   },
   {
     name: 'Meena R.',
     city: 'Bengaluru, Karnataka',
     title: 'Natural & 100% Effective',
     text: "I love that it's 100% natural and free from side effects. My digestion has improved and I feel lighter and healthier.",
+    rating: 5,
   },
   {
     name: 'Amit K.',
     city: 'Ahmedabad, Gujarat',
     title: 'Great Support for Immunity',
     text: 'This juice has become a part of my daily routine. It supports my immunity and keeps me strong every day.',
+    rating: 4,
   },
   {
     name: 'Sunita D.',
     city: 'Lucknow, Uttar Pradesh',
     title: 'Trusted & Reliable Brand',
     text: 'Swavalambi India is a brand I can trust. Pure ingredients and amazing results. Highly recommended!',
+    rating: 5,
   },
 ];
+
+/** Rating breakdown totals 100% and averages to 4.4 (mostly 4★ & 5★) */
+export const REVIEW_SUMMARY = {
+  rating: 4.4,
+  total: 2100,
+  accent: '#96C77E',
+  breakdown: [
+    { stars: 5, count: 1176, percent: 56 },
+    { stars: 4, count: 714, percent: 34 },
+    { stars: 3, count: 126, percent: 6 },
+    { stars: 2, count: 42, percent: 2 },
+    { stars: 1, count: 42, percent: 2 },
+  ],
+};
 
 export const KEY_WELLNESS_BENEFITS = [
   'Helps support natural immunity strength',

@@ -11,14 +11,15 @@ export const CATEGORIES: Category[] = [
 export const PRODUCTS: Product[] = [
   {
     id: 'p1',
-    sku: 'swavalambi-sea-buckthorn-juice-100ml',
+    sku: 'swavalambi-sea-buckthorn-juice-500ml',
     name: 'Sea Buckthorn Himalayan Juice',
     tagline: "Nature's Power of Omega 3, 6, 7, 9 & Vitamin C",
-    price: 899,
-    rating: 4.8,
+    price: 897,
+    rating: 4.4,
     reviews: 2100,
     image: '/assets/content/image-Photoroom%20(21).png',
-    gallery: [],
+    gallery: ['/assets/content/image-Photoroom%20(21).png'],
+   
     category: 'Juices & Tonics',
     badges: ['BESTSELLER'],
     description: 'Premium Himalayan superfood made from fresh whole Leh–Ladakh Sea Buckthorn berries. Rich in Omega 3, 6, 7 & 9 and natural Vitamin C for daily immunity, skin health, energy, and heart wellness.',

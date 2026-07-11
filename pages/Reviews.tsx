@@ -1,5 +1,6 @@
 import React from 'react';
-import { Star, MessageCircle, Play, Sparkles, ShieldCheck, Heart, ArrowRight } from 'lucide-react';
+import { Star, MessageCircle, Sparkles, ArrowRight } from 'lucide-react';
+import { REVIEW_SUMMARY } from '../productContent';
 
 const Reviews: React.FC = () => {
   const writtenReviews = [
@@ -8,70 +9,69 @@ const Reviews: React.FC = () => {
       location: "Pune, Maharashtra",
       rating: 5,
       date: "May 24, 2026",
-      text: "Swavalambi Sea Buckthorn Juice vaprayla suruvat kelyanantar mazi sugar levels khup changlya paddhatine control madhe aali aahe. Mala aata fatigue ani weakness janvat nahi. Energy levels khup active ahet. Khup chan Authentic product aahe!"
+      text: "Swavalambi Sea Buckthorn Juice vaprayla suruvat kelyanantar mazi energy levels khup active ahet. Fatigue ani weakness kam zali. Khup chan Authentic product aahe!"
     },
     {
       name: "Sneha Kulkarni",
       location: "Mumbai, Maharashtra",
       rating: 5,
       date: "May 18, 2026",
-      text: "Maza aai sathi mi he combo order kela hota. Ek mahinyatach ticha HbA1c levels madhe khup changla badal disla. Khas karun kontech side-effects nahit, completely premium ani organic aahe. Highly recommended!"
+      text: "Maza aai sathi mi he juice order kela hota. Ek mahinyatach tichi skin glow ani energy madhe khup changla badal disla. Completely premium ani natural aahe. Highly recommended!"
     },
     {
       name: "Amol Deshmukh",
       location: "Nashik, Maharashtra",
-      rating: 5,
+      rating: 4,
       date: "May 12, 2026",
-      text: "Aamcha poorna kutumbat sugar problems sathi aamhi Swavalambi India chich products vaparto. Sea Buckthorn Juice ani Syrup cha combination apratim aahe. Sugar spikes control karayla he khupch madat karte."
+      text: "Aamcha poorna kutumbat wellness sathi aamhi Swavalambi India chich products vaparto. Sea Buckthorn Juice apratim aahe. Daily immunity support sathi khup madat karte."
     },
     {
       name: "Prakash Shinde",
       location: "Kolhapur, Maharashtra",
       rating: 5,
       date: "May 05, 2026",
-      text: "Kolhapur madhe mazyakade delivery khup fast milali. 3 mahine vaparlyanantar mazi sugar test reports normal aali ahet. Sea Buckthorn Juice mazyasathi ek varadaan tharle aahe."
+      text: "Kolhapur madhe mazyakade delivery khup fast milali. 3 mahine vaparlyanantar mala freshness ani stamina madhe fark disla. Sea Buckthorn Juice mazyasathi ek varadaan tharle aahe."
     },
     {
       name: "Savita Pawar",
       location: "Chhatrapati Sambhajinagar, Maharashtra",
-      rating: 5,
+      rating: 4,
       date: "April 28, 2026",
-      text: "Sea Buckthorn Juices khup convenient ahet. Office madhe astana ghenyasaathi sophe padte. Tasach herbal ingredients aslyamule potala ras hot nahi aani digestion pan khup changle zale aahe."
+      text: "Sea Buckthorn Juice khup convenient aahe. Office madhe astana ghenyasaathi sophe padte. Herbal ingredients aslyamule digestion pan khup changle zale aahe."
     },
     {
       name: "Rahul Gaikwad",
       location: "Solapur, Maharashtra",
       rating: 5,
       date: "April 20, 2026",
-      text: "Authentic medicines madhe maza vishwas navhta, pan Swavalambi Sea Buckthorn Juice che results pahun maza vichar badalla. Sugar levels maintain thevnyaat aani divasbhaar taaje-tawane vatnyaat yacha khup motha वाटा aahe."
+      text: "Pehle natural juices madhe maza vishwas navhta, pan Swavalambi Sea Buckthorn Juice che results pahun maza vichar badalla. Divasbhaar taaje-tawane vatnyaat yacha motha wata aahe."
     },
     {
       name: "Deepali Chavan",
       location: "Thane, Maharashtra",
       rating: 5,
       date: "April 15, 2026",
-      text: "Quality khupch changli aahe. Heavy metals tested aslyamule aamhi nirbhaypane vapru shakto. Packaging pan khup premium aani safe hoti. Dhanyawad Swavalambi team!"
+      text: "Quality khupch changli aahe. Lab tested aslyamule aamhi nirbhaypane vapru shakto. Packaging pan khup premium aani safe hoti. Dhanyawad Swavalambi team!"
     },
     {
       name: "Sanjay More",
       location: "Satara, Maharashtra",
-      rating: 5,
+      rating: 4,
       date: "April 02, 2026",
-      text: "Genuine Authentic formula aahe. Karela, Jamun aani Gudmar cha yogya pramanasathi mazyasathi khup labhdayak tharle. Sugar management sathi sarvat uttam paryay!"
+      text: "Genuine Authentic formula aahe. Omega 3, 6, 7, 9 ani Vitamin C cha yogya pramanasathi mazyasathi khup labhdayak tharle. Daily wellness sathi uttam paryay!"
     },
     {
       name: "Anjali Joshi",
       location: "Sangli, Maharashtra",
       rating: 5,
       date: "March 25, 2026",
-      text: "Maza HbA1c khup jaast hota, pan regular syrup ghetlyaamule khup khali aala aahe. Authentic lifestyle aani Swavalambi products chya madatine mala navin ayushya milale."
+      text: "Regular use kelyanantar energy ani skin health madhe fark disla. Authentic lifestyle aani Swavalambi products chya madatine mala navin ayushya milale."
     }
   ];
 
   return (
-    <div className="pt-[106px] lg:pt-[80px] pb-20 min-h-screen bg-[#F9FDF9] font-sans antialiased text-gray-800">
+    <div className="pt-[106px] lg:pt-[80px] pb-20 min-h-screen bg-[#F7F9F2] font-sans antialiased text-gray-800">
       
-      {/* 1. Page Header Section */}
       <div className="bg-[#092813] text-white py-12 lg:py-16 text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
         <div className="container mx-auto px-6 max-w-4xl relative z-10 space-y-4">
@@ -83,29 +83,81 @@ const Reviews: React.FC = () => {
             Loved by Our Customers
           </h1>
           <p className="text-white/80 font-sans text-xs sm:text-sm max-w-xl mx-auto leading-relaxed">
-            Read authentic experiences and check reviews from genuine Maharashtrian families who transformed their wellness journey with Swavalambi India.
+            Read authentic experiences from families who transformed their wellness journey with Swavalambi India Sea Buckthorn Juice.
           </p>
           
           <div className="flex justify-center items-center gap-2 pt-2 text-xs font-bold text-white/90">
-            <div className="flex text-[#FE8B00] gap-0.5">
-              <Star className="fill-current w-4 h-4" />
-              <Star className="fill-current w-4 h-4" />
-              <Star className="fill-current w-4 h-4" />
-              <Star className="fill-current w-4 h-4" />
-              <Star className="fill-current w-4 h-4" />
+            <div className="flex gap-0.5">
+              {[1, 2, 3, 4, 5].map((s) => {
+                const fill = Math.min(1, Math.max(0, REVIEW_SUMMARY.rating - (s - 1)));
+                return (
+                  <span key={s} className="relative inline-block w-4 h-4">
+                    <Star size={16} className="absolute inset-0 text-white/25 fill-white/25" />
+                    <span className="absolute inset-0 overflow-hidden" style={{ width: `${fill * 100}%` }}>
+                      <Star size={16} className="text-[#96C77E] fill-[#96C77E]" />
+                    </span>
+                  </span>
+                );
+              })}
             </div>
-            <span>4.8/5 Rating based on 10,000+ happy customers</span>
+            <span>{REVIEW_SUMMARY.rating}/5 Rating based on {REVIEW_SUMMARY.total.toLocaleString()}+ happy customers</span>
           </div>
         </div>
       </div>
 
+      <div className="container mx-auto px-6 max-w-5xl mt-10">
+        <div className="bg-white border border-gray-150 rounded-2xl p-5 sm:p-6 shadow-sm">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+            <div className="flex items-center gap-2.5 flex-wrap">
+              <div className="flex items-center gap-0.5">
+                {[1, 2, 3, 4, 5].map((s) => {
+                  const fill = Math.min(1, Math.max(0, REVIEW_SUMMARY.rating - (s - 1)));
+                  return (
+                    <span key={s} className="relative inline-block w-4 h-4">
+                      <Star size={16} className="absolute inset-0 text-gray-200 fill-gray-200" />
+                      <span className="absolute inset-0 overflow-hidden" style={{ width: `${fill * 100}%` }}>
+                        <Star size={16} className="text-[#96C77E] fill-[#96C77E]" />
+                      </span>
+                    </span>
+                  );
+                })}
+              </div>
+              <span className="text-sm font-bold text-gray-800">
+                {REVIEW_SUMMARY.total.toLocaleString()} Reviews
+              </span>
+            </div>
+            <button
+              type="button"
+              onClick={() => window.open('https://wa.me/919373986362?text=Hi%2C%20I%20want%20to%20share%20a%20review%20for%20Sea%20Buckthorn%20Juice.', '_blank')}
+              className="bg-[#96C77E] hover:bg-[#86b56e] text-white text-xs font-bold px-4 py-2 rounded-lg transition-colors cursor-pointer self-start sm:self-auto"
+            >
+              Write A Review
+            </button>
+          </div>
 
+          <div className="space-y-2 max-w-xl">
+            {REVIEW_SUMMARY.breakdown.map((row) => (
+              <div key={row.stars} className="flex items-center gap-2.5 text-xs">
+                <span className="w-3 text-gray-700 font-bold tabular-nums">{row.stars}</span>
+                <Star size={12} className="text-[#96C77E] fill-[#96C77E] shrink-0" />
+                <div className="flex-1 h-2.5 rounded-full bg-gray-200/70 overflow-hidden">
+                  <div
+                    className="h-full rounded-full bg-[#96C77E]"
+                    style={{ width: `${row.percent}%` }}
+                  />
+                </div>
+                <span className="w-10 text-right text-gray-700 font-semibold tabular-nums">{row.count}</span>
+                <span className="w-10 text-right text-[#96C77E] font-semibold tabular-nums">({row.percent}%)</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
-      {/* 3. Written Maharashtrian Reviews Grid */}
-      <div className="container mx-auto px-6 max-w-5xl mt-16">
+      <div className="container mx-auto px-6 max-w-5xl mt-12">
         <div className="text-left mb-8 border-l-4 border-[#092813] pl-4">
           <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#092813]">Customer Experiences</h2>
-          <p className="text-xs text-gray-550 font-semibold mt-1">Verified reviews from our valued patrons in Maharashtra.</p>
+          <p className="text-xs text-gray-550 font-semibold mt-1">Verified reviews from our valued patrons.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -113,9 +165,9 @@ const Reviews: React.FC = () => {
             <div key={idx} className="bg-white border border-gray-150 rounded-2xl p-5 flex flex-col justify-between shadow-sm hover:shadow-md hover:scale-[1.01] transition-all duration-300 relative text-left">
               <div className="space-y-3.5">
                 <div className="flex justify-between items-center">
-                  <div className="flex text-[#FE8B00] gap-0.5">
-                    {[...Array(rev.rating)].map((_, sIdx) => (
-                      <Star key={sIdx} className="fill-current w-3 h-3" />
+                  <div className="flex text-[#96C77E] gap-0.5">
+                    {[...Array(5)].map((_, sIdx) => (
+                      <Star key={sIdx} className={`w-3 h-3 ${sIdx < rev.rating ? 'fill-current' : 'text-gray-200 fill-gray-200'}`} />
                     ))}
                   </div>
                   <span className="text-[9px] text-gray-400 font-semibold">{rev.date}</span>
@@ -139,7 +191,6 @@ const Reviews: React.FC = () => {
         </div>
       </div>
 
-      {/* 4. Authentic Expert Call-To-Action Banner */}
       <div className="container mx-auto px-6 max-w-5xl mt-16">
         <div className="bg-[#092813] text-white border border-[#FE8B00]/25 rounded-3xl p-6 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-md text-left">
           <div className="space-y-2">
@@ -148,16 +199,17 @@ const Reviews: React.FC = () => {
               Get personalized consultations and health guidance from our authentic practitioners completely free.
             </p>
           </div>
-          <button 
-            onClick={() => window.open('https://wa.me/919373986362?text=Hi%20Swavalambi,%20I%20want%20to%20consult%20an%20Ayurvedic%2520Expert.', '_blank')}
-            className="bg-[#25D366] text-white border border-[#25D366] rounded-full font-bold py-2.5 px-6 flex items-center gap-2 hover:bg-white hover:text-[#092813] hover:border-white transition-all text-xs uppercase tracking-wider shrink-0 shadow-md"
+          <button
+            type="button"
+            onClick={() => window.open('https://wa.me/919373986362?text=Hi%2C%20I%20need%20a%20consultation.', '_blank')}
+            className="bg-[#FE8B00] hover:bg-[#e67e00] text-[#061C0D] px-5 py-3 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center gap-2 shrink-0 transition-colors cursor-pointer"
           >
-            <MessageCircle size={15} className="fill-white group-hover:fill-current" />
-            <span>Consult Expert</span>
+            <MessageCircle size={14} />
+            Talk to Expert
+            <ArrowRight size={12} />
           </button>
         </div>
       </div>
-
     </div>
   );
 };

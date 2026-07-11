@@ -43,9 +43,9 @@ const TrackOrder = () => {
           courier: 'Delhivery'
         },
         products: [
-          { name: 'Sea Buckthorn Juice', size: '500 ml', qty: 1, price: 899.00 }
+          { name: 'Sea Buckthorn Juice', size: '500 ml', qty: 1, price: 897.00 }
         ],
-        amount: 899.00
+        amount: 897.00
       });
       return;
     }

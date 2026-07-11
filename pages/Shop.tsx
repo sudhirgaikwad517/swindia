@@ -75,10 +75,10 @@ const Shop: React.FC<ShopProps> = ({ onAddToCart, wishlistItems = [], onToggleWi
   // Exact rating numbers as per screenshot
   const getProductDisplayRating = (id: string) => {
     switch (id) {
-      case 'p1': return 4.8;
-      case 'p2': return 4.7;
-      case 'p3': return 4.6;
-      default: return 4.8;
+      case 'p1': return 4.4;
+      case 'p2': return 4.4;
+      case 'p3': return 4.4;
+      default: return 4.4;
     }
   };
 
@@ -86,7 +86,7 @@ const Shop: React.FC<ShopProps> = ({ onAddToCart, wishlistItems = [], onToggleWi
   const getProductImageDetails = (id: string) => {
     return {
       id: 'product_image_sea_buckthorn_juice',
-      desc: 'Sea Buckthorn Juice 100ml amber bottle ki saaf studio photo. Background light off-white rakho aur thodi halki drop shadow dikhao.'
+      desc: 'Sea Buckthorn Juice 500ml amber bottle ki saaf studio photo. Background light off-white rakho aur thodi halki drop shadow dikhao.'
     };
   };
 
@@ -281,7 +281,7 @@ const Shop: React.FC<ShopProps> = ({ onAddToCart, wishlistItems = [], onToggleWi
                       {product.name}
                     </h3>
                     <p className="text-[12px] sm:text-xs text-gray-400 font-medium leading-none">
-                      {product.id === 'p1' ? '100 ml' : product.id === 'p2' ? '60 Capsules' : product.id === 'p3' ? '100 ml' : product.id === 'p4' ? 'Combo Pack' : 'Wellness Combo'}
+                      {product.id === 'p1' ? '500 ml' : product.id === 'p2' ? '60 Capsules' : product.id === 'p3' ? '100 ml' : product.id === 'p4' ? 'Combo Pack' : 'Wellness Combo'}
                     </p>
                     <div className="flex items-center gap-0.5 text-[#FE8B00] mt-1">
                       <Star className="fill-current w-3 h-3" />
@@ -551,7 +551,7 @@ const Shop: React.FC<ShopProps> = ({ onAddToCart, wishlistItems = [], onToggleWi
                         {product.name}
                       </h3>
                       <p className="text-[10px] text-gray-400 font-medium leading-none">
-                        {product.id === 'p1' ? '100 ml' : product.id === 'p2' ? '60 Capsules' : product.id === 'p3' ? '100 ml' : 'Combo Pack'}
+                        {product.id === 'p1' ? '500 ml' : product.id === 'p2' ? '60 Capsules' : product.id === 'p3' ? '100 ml' : 'Combo Pack'}
                       </p>
                       <div className="flex items-center gap-0.5 text-[#FE8B00] mt-1">
                         <Star className="fill-current w-3 h-3" />
@@ -719,7 +719,7 @@ const Shop: React.FC<ShopProps> = ({ onAddToCart, wishlistItems = [], onToggleWi
               <div className="text-left font-sans leading-tight">
                 <h4 className="text-[10px] font-bold text-gray-800 line-clamp-1">{lastAddedItem.name}</h4>
                 <span className="text-[8px] text-gray-400 font-medium">
-                  {lastAddedItem.id === 'p1' ? '100 ml' : lastAddedItem.id === 'p2' ? '60 Capsules' : lastAddedItem.id === 'p3' ? '100 ml' : 'Combo Pack'}
+                  {lastAddedItem.id === 'p1' ? '500 ml' : lastAddedItem.id === 'p2' ? '60 Capsules' : lastAddedItem.id === 'p3' ? '100 ml' : 'Combo Pack'}
                 </span>
               </div>
             </div>

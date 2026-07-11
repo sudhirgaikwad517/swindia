@@ -15,7 +15,7 @@ const About = () => {
       case 'about_hero_product':
         return {
           id: 'product_image_sea_buckthorn_juice',
-          desc: 'Sea Buckthorn Juice 100ml amber bottle on a rustic slate platter alongside a mortar and pestle, with fresh green leaves around.'
+          desc: 'Sea Buckthorn Juice 500ml amber bottle on a rustic slate platter alongside a mortar and pestle, with fresh green leaves around.'
         };
       case 'about_mission_vision_image':
         return {

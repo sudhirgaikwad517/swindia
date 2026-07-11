@@ -39,7 +39,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart, wishlistItems = [], onToggleWi
   const getProductImageDetails = (id: string) => {
     return {
       id: 'product_image_sea_buckthorn_juice',
-      desc: 'Sea Buckthorn Juice 100ml bottle.'
+      desc: 'Sea Buckthorn Juice 500ml bottle.'
     };
   };
 
@@ -83,19 +83,19 @@ const Home: React.FC<HomeProps> = ({ onAddToCart, wishlistItems = [], onToggleWi
     <div className="bg-[#F9FDF9] text-gray-800 antialiased min-h-screen pt-0 lg:pt-16 pb-12 lg:pb-0">
       
       {/* 1. HERO SECTION - MOBILE VIEW */}
-      <section className="block lg:hidden relative bg-gradient-to-br from-[#061C0D] to-[#092813] hero-bg-animated text-white pt-32 pb-14 overflow-hidden min-h-0 flex items-center">
+      <section className="block lg:hidden relative bg-gradient-to-br from-[#F3F6F1] via-[#F7F9F5] to-[#EEF2EC] text-[#061C0D] pt-32 pb-14 overflow-hidden min-h-0 flex items-center">
         {/* Floating Leaves */}
-        <div className="absolute top-[15%] left-[5%] opacity-15 pointer-events-none z-0 animate-leaf-1">
-          <Leaf size={24} className="text-green-300 fill-green-300/10" />
+        <div className="absolute top-[15%] left-[5%] opacity-20 pointer-events-none z-0 animate-leaf-1">
+          <Leaf size={24} className="text-[#66AA41] fill-[#66AA41]/10" />
         </div>
-        <div className="absolute bottom-[25%] left-[12%] opacity-10 pointer-events-none z-0 animate-leaf-2">
-          <Leaf size={16} className="text-green-400 fill-green-400/10" />
+        <div className="absolute bottom-[25%] left-[12%] opacity-15 pointer-events-none z-0 animate-leaf-2">
+          <Leaf size={16} className="text-[#092813] fill-[#092813]/10" />
         </div>
         <div className="absolute top-[20%] right-[32%] opacity-20 pointer-events-none z-0 animate-leaf-3">
-          <Leaf size={28} className="text-green-200 fill-green-200/10" />
+          <Leaf size={28} className="text-[#66AA41] fill-[#66AA41]/10" />
         </div>
         <div className="absolute bottom-[15%] right-[8%] opacity-15 pointer-events-none z-0 animate-leaf-4">
-          <Leaf size={20} className="text-green-300 fill-green-300/10" />
+          <Leaf size={20} className="text-[#092813] fill-[#092813]/10" />
         </div>
         <div className="w-full mx-auto px-4 relative z-10 py-2">
           <div className="grid grid-cols-12 gap-2 items-center">
@@ -105,50 +105,50 @@ const Home: React.FC<HomeProps> = ({ onAddToCart, wishlistItems = [], onToggleWi
               <div className="inline-block border border-[#FE8B00] text-[#FE8B00] text-[7px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full font-sans">
                 Premium Himalayan Superfood
               </div>
-              <h1 className="font-serif text-base font-bold leading-tight">
+              <h1 className="font-serif text-base font-bold leading-tight text-[#061C0D]">
                 Sea Buckthorn <br />
                 <span className="text-[#FE8B00]">Himalayan Juice</span>
               </h1>
-              <p className="text-white/80 text-[8px] leading-relaxed font-sans">
+              <p className="text-[#061C0D]/70 text-[8px] leading-relaxed font-sans">
                 Nature's Power of Omega 3, 6, 7, 9 & Vitamin C. Supports immunity, skin health, energy, and heart wellness.
               </p>
 
               {/* 4 Feature Items */}
-              <div className="grid grid-cols-2 gap-1.5 pt-1 text-white/90">
+              <div className="grid grid-cols-2 gap-1.5 pt-1 text-[#061C0D]">
                 <div className="flex items-center gap-1">
-                  <div className="w-5 h-5 rounded-full border border-[#FE8B00]/30 flex items-center justify-center text-[#FE8B00] shrink-0">
+                  <div className="w-5 h-5 rounded-full border border-[#FE8B00]/40 bg-white/60 flex items-center justify-center text-[#FE8B00] shrink-0">
                     <Leaf className="w-3 h-3" />
                   </div>
                   <div className="text-left leading-tight min-w-0">
-                    <div className="font-serif text-[9px] font-bold text-white">Authentic</div>
-                    <div className="font-sans text-[6px] text-white/80 font-normal">Ingredients</div>
+                    <div className="font-serif text-[9px] font-bold text-[#061C0D]">Authentic</div>
+                    <div className="font-sans text-[6px] text-[#061C0D]/65 font-normal">Ingredients</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-1">
-                  <div className="w-5 h-5 rounded-full border border-[#FE8B00]/30 flex items-center justify-center text-[#FE8B00] shrink-0">
+                  <div className="w-5 h-5 rounded-full border border-[#FE8B00]/40 bg-white/60 flex items-center justify-center text-[#FE8B00] shrink-0">
                     <Sprout className="w-3 h-3" />
                   </div>
                   <div className="text-left leading-tight min-w-0">
-                    <div className="font-serif text-[9px] font-bold text-white">Supports</div>
-                    <div className="font-sans text-[6px] text-white/80 font-normal">Immunity</div>
+                    <div className="font-serif text-[9px] font-bold text-[#061C0D]">Supports</div>
+                    <div className="font-sans text-[6px] text-[#061C0D]/65 font-normal">Immunity</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-1">
-                  <div className="w-5 h-5 rounded-full border border-[#FE8B00]/30 flex items-center justify-center text-[#FE8B00] shrink-0">
+                  <div className="w-5 h-5 rounded-full border border-[#FE8B00]/40 bg-white/60 flex items-center justify-center text-[#FE8B00] shrink-0">
                     <Zap className="w-3 h-3" />
                   </div>
                   <div className="text-left leading-tight min-w-0">
-                    <div className="font-serif text-[9px] font-bold text-white">Boosts</div>
-                    <div className="font-sans text-[6px] text-white/80 font-normal">Metabolism</div>
+                    <div className="font-serif text-[9px] font-bold text-[#061C0D]">Boosts</div>
+                    <div className="font-sans text-[6px] text-[#061C0D]/65 font-normal">Metabolism</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-1">
-                  <div className="w-5 h-5 rounded-full border border-[#FE8B00]/30 flex items-center justify-center text-[#FE8B00] shrink-0">
+                  <div className="w-5 h-5 rounded-full border border-[#FE8B00]/40 bg-white/60 flex items-center justify-center text-[#FE8B00] shrink-0">
                     <Heart className="w-3 h-3" />
                   </div>
                   <div className="text-left leading-tight min-w-0">
-                    <div className="font-serif text-[9px] font-bold text-white">Improves</div>
-                    <div className="font-sans text-[6px] text-white/80 font-normal">Overall Health</div>
+                    <div className="font-serif text-[9px] font-bold text-[#061C0D]">Improves</div>
+                    <div className="font-sans text-[6px] text-[#061C0D]/65 font-normal">Overall Health</div>
                   </div>
                 </div>
               </div>
@@ -157,7 +157,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart, wishlistItems = [], onToggleWi
               <div className="flex pt-2 font-sans">
                 <button 
                   onClick={() => navigate('/shop')}
-                  className="bg-[#FE8B00] hover:bg-white text-[#061C0D] hover:text-[#092813] px-5 py-2 rounded-full text-[10px] font-bold uppercase tracking-wider transition-all duration-300 border border-[#FE8B00] shadow-md"
+                  className="bg-[#FE8B00] hover:bg-[#061C0D] text-[#061C0D] hover:text-white px-5 py-2 rounded-full text-[10px] font-bold uppercase tracking-wider transition-all duration-300 border border-[#FE8B00] shadow-md"
                 >
                   Shop Now →
                 </button>
@@ -181,19 +181,19 @@ const Home: React.FC<HomeProps> = ({ onAddToCart, wishlistItems = [], onToggleWi
       </section>
 
       {/* 1. HERO SECTION - DESKTOP VIEW */}
-      <section className="hidden lg:flex relative bg-gradient-to-br from-[#061C0D] to-[#092813] hero-bg-animated text-white pt-14 pb-4 overflow-hidden min-h-[420px] items-center">
+      <section className="hidden lg:flex relative bg-gradient-to-br from-[#F3F6F1] via-[#F7F9F5] to-[#EEF2EC] text-[#061C0D] pt-14 pb-4 overflow-hidden min-h-[420px] items-center">
         {/* Floating Leaves */}
-        <div className="absolute top-[15%] left-[5%] opacity-15 pointer-events-none z-10 animate-leaf-1">
-          <Leaf size={32} className="text-green-300 fill-green-300/10" />
+        <div className="absolute top-[15%] left-[5%] opacity-20 pointer-events-none z-10 animate-leaf-1">
+          <Leaf size={32} className="text-[#66AA41] fill-[#66AA41]/10" />
         </div>
-        <div className="absolute bottom-[25%] left-[15%] opacity-10 pointer-events-none z-10 animate-leaf-2">
-          <Leaf size={24} className="text-green-400 fill-green-400/10" />
+        <div className="absolute bottom-[25%] left-[15%] opacity-15 pointer-events-none z-10 animate-leaf-2">
+          <Leaf size={24} className="text-[#092813] fill-[#092813]/10" />
         </div>
         <div className="absolute top-[20%] right-[35%] opacity-20 pointer-events-none z-10 animate-leaf-3">
-          <Leaf size={40} className="text-green-200 fill-green-200/10" />
+          <Leaf size={40} className="text-[#66AA41] fill-[#66AA41]/10" />
         </div>
         <div className="absolute bottom-[15%] right-[10%] opacity-15 pointer-events-none z-10 animate-leaf-4">
-          <Leaf size={28} className="text-green-300 fill-green-300/10" />
+          <Leaf size={28} className="text-[#092813] fill-[#092813]/10" />
         </div>
         <div className="container mx-auto px-6 md:px-12 lg:px-16 max-w-7xl xl:max-w-[1400px] relative z-10 py-2">
           <div className="grid grid-cols-12 gap-8 lg:gap-6 items-center relative">
@@ -203,50 +203,50 @@ const Home: React.FC<HomeProps> = ({ onAddToCart, wishlistItems = [], onToggleWi
               <div className="inline-block border border-[#FE8B00] text-[#FE8B00] text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full font-sans mb-2">
                 Premium Himalayan Superfood
               </div>
-              <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[58px] xl:text-[66px] font-bold leading-tight">
+              <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[58px] xl:text-[66px] font-bold leading-tight text-[#061C0D]">
                 Sea Buckthorn <br />
                 <span className="text-[#FE8B00]">Himalayan Juice</span>
               </h1>
-              <p className="text-white/80 text-xs sm:text-sm lg:text-base xl:text-lg leading-relaxed max-w-xl font-sans">
+              <p className="text-[#061C0D]/70 text-xs sm:text-sm lg:text-base xl:text-lg leading-relaxed max-w-xl font-sans">
                 Nature's Power of Omega 3, 6, 7, 9 & Vitamin C. Supports immunity, skin health, energy, and heart wellness.
               </p>
 
               {/* 4 Feature Items */}
-              <div className="grid grid-cols-4 gap-3 pt-4 text-white/90">
+              <div className="grid grid-cols-4 gap-3 pt-4 text-[#061C0D]">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full border border-[#FE8B00]/30 flex items-center justify-center text-[#FE8B00] shrink-0">
+                  <div className="w-10 h-10 rounded-full border border-[#FE8B00]/40 bg-white/70 flex items-center justify-center text-[#FE8B00] shrink-0">
                     <Leaf size={20} />
                   </div>
                   <div className="text-left leading-tight">
-                    <div className="font-serif text-[13px] sm:text-[14px] font-bold text-white">Authentic</div>
-                    <div className="font-sans text-[10px] sm:text-[11px] text-white/80 font-normal mt-0.5">Ingredients</div>
+                    <div className="font-serif text-[13px] sm:text-[14px] font-bold text-[#061C0D]">Authentic</div>
+                    <div className="font-sans text-[10px] sm:text-[11px] text-[#061C0D]/65 font-normal mt-0.5">Ingredients</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full border border-[#FE8B00]/30 flex items-center justify-center text-[#FE8B00] shrink-0">
+                  <div className="w-10 h-10 rounded-full border border-[#FE8B00]/40 bg-white/70 flex items-center justify-center text-[#FE8B00] shrink-0">
                     <Sprout size={20} />
                   </div>
                   <div className="text-left leading-tight">
-                    <div className="font-serif text-[13px] sm:text-[14px] font-bold text-white">Supports</div>
-                    <div className="font-sans text-[10px] sm:text-[11px] text-white/80 font-normal mt-0.5">Immunity</div>
+                    <div className="font-serif text-[13px] sm:text-[14px] font-bold text-[#061C0D]">Supports</div>
+                    <div className="font-sans text-[10px] sm:text-[11px] text-[#061C0D]/65 font-normal mt-0.5">Immunity</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full border border-[#FE8B00]/30 flex items-center justify-center text-[#FE8B00] shrink-0">
+                  <div className="w-10 h-10 rounded-full border border-[#FE8B00]/40 bg-white/70 flex items-center justify-center text-[#FE8B00] shrink-0">
                     <Zap size={20} />
                   </div>
                   <div className="text-left leading-tight">
-                    <div className="font-serif text-[13px] sm:text-[14px] font-bold text-white">Boosts</div>
-                    <div className="font-sans text-[10px] sm:text-[11px] text-white/80 font-normal mt-0.5">Metabolism</div>
+                    <div className="font-serif text-[13px] sm:text-[14px] font-bold text-[#061C0D]">Boosts</div>
+                    <div className="font-sans text-[10px] sm:text-[11px] text-[#061C0D]/65 font-normal mt-0.5">Metabolism</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full border border-[#FE8B00]/30 flex items-center justify-center text-[#FE8B00] shrink-0">
+                  <div className="w-10 h-10 rounded-full border border-[#FE8B00]/40 bg-white/70 flex items-center justify-center text-[#FE8B00] shrink-0">
                     <Heart size={20} />
                   </div>
                   <div className="text-left leading-tight">
-                    <div className="font-serif text-[13px] sm:text-[14px] font-bold text-white">Improves</div>
-                    <div className="font-sans text-[10px] sm:text-[11px] text-white/80 font-normal mt-0.5">Overall Health</div>
+                    <div className="font-serif text-[13px] sm:text-[14px] font-bold text-[#061C0D]">Improves</div>
+                    <div className="font-sans text-[10px] sm:text-[11px] text-[#061C0D]/65 font-normal mt-0.5">Overall Health</div>
                   </div>
                 </div>
               </div>
@@ -255,7 +255,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart, wishlistItems = [], onToggleWi
               <div className="flex items-center gap-4 pt-6 font-sans">
                 <button 
                   onClick={() => navigate('/shop')}
-                  className="bg-[#FE8B00] hover:bg-white text-[#061C0D] hover:text-[#092813] px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 border border-[#FE8B00]"
+                  className="bg-[#FE8B00] hover:bg-[#061C0D] text-[#061C0D] hover:text-white px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 border border-[#FE8B00] shadow-md"
                 >
                   Shop Now →
                 </button>
@@ -383,7 +383,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart, wishlistItems = [], onToggleWi
               <div className="text-[#FE8B00] mb-1">
                 <Star className="fill-current w-5 h-5 sm:w-8 sm:h-8" />
               </div>
-              <span className="font-serif text-sm sm:text-3xl font-bold text-white">4.8/5</span>
+              <span className="font-serif text-sm sm:text-3xl font-bold text-white">4.4/5</span>
               <div className="font-sans text-[8px] sm:text-xs text-white/80 leading-tight">
                 <div>Customer</div>
                 <div>Rating</div>
@@ -556,7 +556,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart, wishlistItems = [], onToggleWi
                         {product.name}
                       </h3>
                       <p className="text-[10px] text-gray-500 font-medium font-sans mt-0.5">
-                        {product.id === 'p1' ? '100 ml' : product.id === 'p2' ? '60 Capsules' : product.id === 'p3' ? '100 ml' : 'Combo Pack'}
+                        {product.id === 'p1' ? '500 ml' : product.id === 'p2' ? '60 Capsules' : product.id === 'p3' ? '100 ml' : 'Combo Pack'}
                       </p>
                     </div>
                     
@@ -608,7 +608,7 @@ const Home: React.FC<HomeProps> = ({ onAddToCart, wishlistItems = [], onToggleWi
                         {product.name}
                       </h3>
                       <p className="text-[9px] text-gray-400 font-medium leading-none">
-                        {product.id === 'p1' ? '100 ml' : product.id === 'p2' ? '60 Capsules' : product.id === 'p3' ? '100 ml' : 'Combo Pack'}
+                        {product.id === 'p1' ? '500 ml' : product.id === 'p2' ? '60 Capsules' : product.id === 'p3' ? '100 ml' : 'Combo Pack'}
                       </p>
                     </div>
 

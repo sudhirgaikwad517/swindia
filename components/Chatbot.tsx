@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { MessageCircle, X, Send, Leaf, Loader2 } from 'lucide-react';
+import { X, Send, Loader2 } from 'lucide-react';
 import { getGeminiReply, isGeminiConfigured, GeminiChatTurn } from '../services/geminiChat';
 
 const WHATSAPP_NUMBER = '919373986362';
@@ -93,13 +93,18 @@ const Chatbot: React.FC = () => {
         <div className="fixed bottom-4 right-4 lg:bottom-6 lg:right-6 z-[60] w-[calc(100vw-2rem)] max-w-[360px] bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden flex flex-col font-sans">
           <div className="bg-[#092813] text-white px-4 py-3 flex items-center justify-between shrink-0">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-full bg-[#FE8B00]/20 border border-[#FE8B00]/40 flex items-center justify-center">
-                <Leaf size={16} className="text-[#FE8B00]" />
+              <div className="relative w-10 h-10 shrink-0 rounded-full overflow-hidden">
+                <img
+                  src="/assets/content/chatbot-avatar.png"
+                  alt="Swavalambi Assistant"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div>
                 <p className="text-sm font-bold leading-tight">Swavalambi Assistant</p>
-                <p className="text-[10px] text-white/70">
-                  {isGeminiConfigured() ? 'AI-powered · Instant replies' : 'WhatsApp support available'}
+                <p className="text-[10px] text-emerald-300 flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block" />
+                  Online · Instant replies
                 </p>
               </div>
             </div>
@@ -182,14 +187,24 @@ const Chatbot: React.FC = () => {
 
       <button
         onClick={() => setIsOpen((prev) => !prev)}
-        className={`fixed bottom-4 right-4 lg:bottom-6 lg:right-6 z-[60] w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 ${
-          isOpen
-            ? 'bg-gray-700 text-white scale-95'
-            : 'bg-[#FE8B00] text-[#061C0D] hover:bg-[#092813] hover:text-white hover:scale-105'
+        className={`fixed bottom-4 right-4 lg:bottom-6 lg:right-6 z-[60] transition-all duration-300 ${
+          isOpen ? 'scale-95' : 'hover:scale-105'
         }`}
         aria-label={isOpen ? 'Close chat' : 'Open chat'}
       >
-        {isOpen ? <X size={24} /> : <MessageCircle size={26} className="fill-current" />}
+        {isOpen ? (
+          <span className="w-14 h-14 rounded-full bg-gray-700 text-white shadow-lg flex items-center justify-center">
+            <X size={24} />
+          </span>
+        ) : (
+          <span className="block w-14 h-14 rounded-full overflow-hidden shadow-lg">
+            <img
+              src="/assets/content/chatbot-avatar.png"
+              alt="Chat with us"
+              className="w-full h-full object-cover"
+            />
+          </span>
+        )}
       </button>
     </>
   );

@@ -63,11 +63,11 @@ const Header: React.FC<HeaderProps> = ({ wishlistCount = 0, cartCount = 0 }) => 
     <div className="fixed top-0 w-full z-50 flex flex-col transition-all duration-300">
       
       {/* Announcement Bar */}
-      <div className="bg-[#FE8B00] py-2 border-b border-[#061C0D]/10 z-50">
-        <div className="container mx-auto px-2 sm:px-4 lg:px-8 max-w-6xl flex justify-center items-center text-[8px] sm:text-[10px] font-sans tracking-wider uppercase font-bold text-[#061C0D]">
+      <div className="bg-[#092813] py-2 border-b border-[#061C0D]/20 z-50">
+        <div className="container mx-auto px-2 sm:px-4 lg:px-8 max-w-6xl flex justify-center items-center text-[8px] sm:text-[10px] font-sans tracking-wider uppercase font-bold text-white">
           <div className="flex items-center gap-1.5 sm:gap-3.5 justify-center whitespace-nowrap">
             <span>🚚 FREE Delivery Across India</span>
-            <span className="text-[#061C0D]/30">|</span>
+            <span className="text-white/40">|</span>
             <span>💵 Cash on Delivery (COD) Available</span>
           </div>
         </div>

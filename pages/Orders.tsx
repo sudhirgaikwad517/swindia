@@ -19,7 +19,7 @@ const Orders = () => {
       id: 'PRV987654321',
       date: '08 May 2024',
       itemsCount: 1,
-      price: 899.00,
+      price: 897.00,
       status: 'Delivered',
       statusColor: 'text-gray-700 bg-gray-50 border-gray-400/10'
     }
