@@ -106,19 +106,24 @@ const Footer: React.FC = () => {
                 </li>
               </ul>
 
-              {/* Google Maps Iframe */}
-              <div className="rounded-lg overflow-hidden border border-white/10 h-40 shadow-inner">
+              {/* Location Map */}
+              <div className="relative w-full h-44 rounded-lg overflow-hidden border border-white/20 bg-[#e8eaed] shadow-inner">
                 <iframe
-                  src="https://maps.google.com/maps?q=Rahata,+Ahmed+Nagar,+Maharashtra&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=74.46%2C19.70%2C74.51%2C19.74&layer=mapnik&marker=19.7167%2C74.4833"
+                  className="absolute inset-0 w-full h-full border-0"
                   loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
                   title="Swavalambi India Location"
-                ></iframe>
+                />
               </div>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Sai+Darshan+Complex,+Rahata,+Ahmednagar,+Maharashtra+423107"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#FE8B00] hover:text-white transition-colors mt-2"
+              >
+                <MapPin size={12} />
+                Open in Google Maps →
+              </a>
             </div>
           </div>
         </div>

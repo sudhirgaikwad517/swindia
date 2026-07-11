@@ -239,7 +239,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
       `}</style>
       
       {/* Breadcrumbs */}
-      <div className="max-w-5xl mx-auto px-6 py-4">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4">
         <div className="text-xs text-gray-500 font-sans flex items-center gap-1.5 text-left">
           <span className="cursor-pointer hover:text-[#061C0D] transition-colors" onClick={() => navigate('/')}>Home</span> 
           <span>&gt;</span>
@@ -252,7 +252,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
       </div>
 
       {/* Main Container */}
-      <div className="max-w-5xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         
         {/* ========================================================================= */}
         {/* UPPER MAIN PRODUCT SECTION */}
@@ -629,7 +629,9 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
               </div>
             </>
           ) : null}
-               {product.isUpcoming ? (
+        </div>
+
+        {product.isUpcoming ? (
           <section className="bg-white border border-gray-150 rounded-3xl p-6 md:p-10 shadow-sm mt-8 text-center max-w-3xl mx-auto w-full">
             <span className="bg-[#EBF1E6] border border-[#092813]/15 text-[#092813] text-[10px] font-black tracking-widest px-3 py-1 rounded-full uppercase">
               Under Formulation
@@ -992,8 +994,8 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
         ) : (
           <>
             {/* FAQ SECTION */}
-            <section className="bg-white border border-gray-150 rounded-3xl p-6 md:p-10 shadow-sm mt-8">
-              <div className="text-center max-w-2xl mx-auto mb-8">
+            <section className="mt-10 pt-2">
+              <div className="text-center mb-6 md:mb-8">
                 <span className="bg-[#EBF1E6] border border-[#092813]/15 text-[#092813] text-[10px] font-black tracking-widest px-3 py-1 rounded-full uppercase">
                   FAQ
                 </span>
@@ -1001,17 +1003,17 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
                   ❓ Frequently Asked Questions
                 </h2>
               </div>
-              <div className="max-w-3xl mx-auto space-y-2">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-1 w-full">
                 {SEA_BUCKTHORN_FAQS.map((faq, idx) => {
                   const isOpen = activeFaq === idx;
                   return (
-                    <div key={idx} className="border-b border-gray-100 pb-2">
+                    <div key={idx} className="border-b border-gray-200 pb-2">
                       <button
                         onClick={() => setActiveFaq(isOpen ? null : idx)}
-                        className="w-full flex justify-between items-center py-3 text-left cursor-pointer text-sm font-bold text-gray-800 hover:text-[#092813] transition-colors"
+                        className="w-full flex justify-between items-center py-3 text-left cursor-pointer text-sm font-bold text-gray-800 hover:text-[#092813] transition-colors gap-2"
                       >
-                        <span>👉 {idx + 1}. {faq.q}</span>
-                        <ChevronDown size={16} className={`text-gray-400 transition-transform shrink-0 ml-2 ${isOpen ? 'rotate-180' : ''}`} />
+                        <span className="leading-snug">👉 {idx + 1}. {faq.q}</span>
+                        <ChevronDown size={16} className={`text-gray-400 transition-transform shrink-0 ${isOpen ? 'rotate-180' : ''}`} />
                       </button>
                       {isOpen && (
                         <p className="text-xs text-gray-550 leading-relaxed pb-3 animate-fade-in font-medium whitespace-pre-line">
@@ -1038,8 +1040,8 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div className="lg:col-span-4 space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-8 items-start lg:items-center">
+                <div className="md:col-span-2 lg:col-span-4 space-y-5 lg:space-y-5 order-2 lg:order-none md:grid md:grid-cols-2 md:gap-5 lg:block lg:space-y-5">
                   {[
                     { ...WHY_CHOOSE_BENEFITS_LEFT[0], icon: ShieldCheck },
                     { ...WHY_CHOOSE_BENEFITS_LEFT[1], icon: Heart },
@@ -1048,11 +1050,11 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
                   ].map((item, idx) => {
                     const Icon = item.icon;
                     return (
-                      <div key={idx} className="flex items-start gap-4 text-left">
-                        <div className="w-12 h-12 rounded-full bg-[#EBF1E6] flex items-center justify-center text-[#092813] shrink-0 shadow-sm border border-[#092813]/10">
-                          <Icon size={20} />
+                      <div key={idx} className="flex items-start gap-3 text-left">
+                        <div className="w-11 h-11 rounded-full bg-[#EBF1E6] flex items-center justify-center text-[#092813] shrink-0 shadow-sm border border-[#092813]/10">
+                          <Icon size={18} />
                         </div>
-                        <div>
+                        <div className="min-w-0">
                           <h4 className="text-sm font-extrabold text-gray-900 leading-tight">{item.title}</h4>
                           <p className="text-[11px] text-gray-550 font-medium leading-normal mt-1">{item.desc}</p>
                         </div>
@@ -1061,14 +1063,14 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
                   })}
                 </div>
 
-                <div className="lg:col-span-4 flex flex-col items-center justify-center relative py-4">
-                  <div className="relative max-w-[240px] flex items-center justify-center">
-                    <img src={product.image} alt={product.name} className="h-64 w-auto object-contain z-10 drop-shadow-xl" />
-                    <div className="absolute bottom-[-10px] left-[-15%] right-[15%] h-6 bg-black/10 rounded-full blur-md z-0"></div>
+                <div className="md:col-span-2 lg:col-span-4 flex flex-col items-center justify-center relative py-2 order-1 lg:order-none">
+                  <div className="relative max-w-[280px] w-full flex items-center justify-center">
+                    <img src={product.image} alt={product.name} className="h-56 sm:h-64 w-auto object-contain z-10 drop-shadow-xl mx-auto" />
+                    <div className="absolute bottom-[-10px] left-[10%] right-[10%] h-6 bg-black/10 rounded-full blur-md z-0"></div>
                   </div>
                 </div>
 
-                <div className="lg:col-span-4 space-y-6">
+                <div className="md:col-span-2 lg:col-span-4 space-y-5 order-3 lg:order-none md:grid md:grid-cols-2 md:gap-5 lg:block">
                   {[
                     { ...WHY_CHOOSE_BENEFITS_RIGHT[0], icon: Scale },
                     { ...WHY_CHOOSE_BENEFITS_RIGHT[1], icon: Droplet },
@@ -1077,11 +1079,11 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
                   ].map((item, idx) => {
                     const Icon = item.icon;
                     return (
-                      <div key={idx} className="flex items-start gap-4 text-left">
-                        <div className="w-12 h-12 rounded-full bg-[#EBF1E6] flex items-center justify-center text-[#092813] shrink-0 shadow-sm border border-[#092813]/10">
-                          <Icon size={20} />
+                      <div key={idx} className="flex items-start gap-3 text-left">
+                        <div className="w-11 h-11 rounded-full bg-[#EBF1E6] flex items-center justify-center text-[#092813] shrink-0 shadow-sm border border-[#092813]/10">
+                          <Icon size={18} />
                         </div>
-                        <div>
+                        <div className="min-w-0">
                           <h4 className="text-sm font-extrabold text-gray-900 leading-tight">{item.title}</h4>
                           <p className="text-[11px] text-gray-550 font-medium leading-normal mt-1">{item.desc}</p>
                         </div>
@@ -1163,7 +1165,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
                 </p>
               </div>
 
-              <div className="space-y-8 max-w-3xl mx-auto text-left">
+              <div className="space-y-8 w-full text-left">
                 <div>
                   <h3 className="font-serif text-lg font-bold text-[#092813] mb-2">🌿 Nature's Pure Himalayan Superfruit</h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
@@ -1380,7 +1382,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
               </div>
             </section>
           </>
-        )}   </div>
+        )}
 
         {/* ========================================================================= */}
         {/* CROSS-SELL COMBO PROFILES */}
@@ -1468,7 +1470,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({
       {/* ========================================================================= */}
       {showStickyBar && !product.isUpcoming && (
         <div className="fixed bottom-0 left-0 right-0 z-50 bg-[#061C0D] text-white py-3.5 px-8 hidden lg:block border-t border-[#FE8B00]/25 shadow-[0_-4px_16px_rgba(0,0,0,0.15)] animate-fade-in text-left">
-          <div className="max-w-5xl mx-auto flex items-center justify-between">
+          <div className="max-w-6xl mx-auto flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-white border border-[#FE8B00]/20 flex items-center justify-center overflow-hidden shrink-0">
                 <img src={product.image} alt={product.name} className="w-7 h-7 object-contain" />

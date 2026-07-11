@@ -85,91 +85,91 @@ const Home: React.FC<HomeProps> = ({ onAddToCart, wishlistItems = [], onToggleWi
       {/* 1. HERO SECTION - MOBILE VIEW */}
       <section className="block lg:hidden relative bg-gradient-to-br from-[#061C0D] to-[#092813] hero-bg-animated text-white pt-32 pb-14 overflow-hidden min-h-0 flex items-center">
         {/* Floating Leaves */}
-        <div className="absolute top-[15%] left-[5%] opacity-15 pointer-events-none z-10 animate-leaf-1">
+        <div className="absolute top-[15%] left-[5%] opacity-15 pointer-events-none z-0 animate-leaf-1">
           <Leaf size={24} className="text-green-300 fill-green-300/10" />
         </div>
-        <div className="absolute bottom-[25%] left-[12%] opacity-10 pointer-events-none z-10 animate-leaf-2">
+        <div className="absolute bottom-[25%] left-[12%] opacity-10 pointer-events-none z-0 animate-leaf-2">
           <Leaf size={16} className="text-green-400 fill-green-400/10" />
         </div>
-        <div className="absolute top-[20%] right-[32%] opacity-20 pointer-events-none z-10 animate-leaf-3">
+        <div className="absolute top-[20%] right-[32%] opacity-20 pointer-events-none z-0 animate-leaf-3">
           <Leaf size={28} className="text-green-200 fill-green-200/10" />
         </div>
-        <div className="absolute bottom-[15%] right-[8%] opacity-15 pointer-events-none z-10 animate-leaf-4">
+        <div className="absolute bottom-[15%] right-[8%] opacity-15 pointer-events-none z-0 animate-leaf-4">
           <Leaf size={20} className="text-green-300 fill-green-300/10" />
         </div>
-        <div className="w-full mx-auto px-6 relative z-10 py-2">
-          <div className="grid grid-cols-12 gap-0 items-center relative">
+        <div className="w-full mx-auto px-4 relative z-10 py-2">
+          <div className="grid grid-cols-12 gap-2 items-center">
             
             {/* Left Content Column */}
-            <div className="col-span-7 space-y-3 text-left relative z-20 pr-4">
-              <div className="inline-block border border-[#FE8B00] text-[#FE8B00] text-[8px] font-bold uppercase tracking-widest px-2.5 py-0.5 rounded-full font-sans mb-0.5">
+            <div className="col-span-7 space-y-2.5 text-left relative z-10 min-w-0 pr-1">
+              <div className="inline-block border border-[#FE8B00] text-[#FE8B00] text-[7px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full font-sans">
                 Premium Himalayan Superfood
               </div>
-              <h1 className="font-serif text-lg font-bold leading-tight">
+              <h1 className="font-serif text-base font-bold leading-tight">
                 Sea Buckthorn <br />
                 <span className="text-[#FE8B00]">Himalayan Juice</span>
               </h1>
-              <p className="text-white/80 text-[9px] leading-relaxed max-w-lg font-sans">
+              <p className="text-white/80 text-[8px] leading-relaxed font-sans">
                 Nature's Power of Omega 3, 6, 7, 9 & Vitamin C. Supports immunity, skin health, energy, and heart wellness.
               </p>
 
               {/* 4 Feature Items */}
-              <div className="grid grid-cols-2 gap-2 pt-2 text-white/90">
-                <div className="flex items-center gap-1.5">
-                  <div className="w-6 h-6 rounded-full border border-[#FE8B00]/30 flex items-center justify-center text-[#FE8B00] shrink-0">
-                    <Leaf className="w-3.5 h-3.5" />
+              <div className="grid grid-cols-2 gap-1.5 pt-1 text-white/90">
+                <div className="flex items-center gap-1">
+                  <div className="w-5 h-5 rounded-full border border-[#FE8B00]/30 flex items-center justify-center text-[#FE8B00] shrink-0">
+                    <Leaf className="w-3 h-3" />
                   </div>
-                  <div className="text-left leading-tight">
-                    <div className="font-serif text-[10px] font-bold text-white">Authentic</div>
-                    <div className="font-sans text-[7px] text-white/80 font-normal mt-0.5">Ingredients</div>
-                  </div>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <div className="w-6 h-6 rounded-full border border-[#FE8B00]/30 flex items-center justify-center text-[#FE8B00] shrink-0">
-                    <Sprout className="w-3.5 h-3.5" />
-                  </div>
-                  <div className="text-left leading-tight">
-                    <div className="font-serif text-[10px] font-bold text-white">Supports</div>
-                    <div className="font-sans text-[7px] text-white/80 font-normal mt-0.5">Immunity</div>
+                  <div className="text-left leading-tight min-w-0">
+                    <div className="font-serif text-[9px] font-bold text-white">Authentic</div>
+                    <div className="font-sans text-[6px] text-white/80 font-normal">Ingredients</div>
                   </div>
                 </div>
-                <div className="flex items-center gap-1.5">
-                  <div className="w-6 h-6 rounded-full border border-[#FE8B00]/30 flex items-center justify-center text-[#FE8B00] shrink-0">
-                    <Zap className="w-3.5 h-3.5" />
+                <div className="flex items-center gap-1">
+                  <div className="w-5 h-5 rounded-full border border-[#FE8B00]/30 flex items-center justify-center text-[#FE8B00] shrink-0">
+                    <Sprout className="w-3 h-3" />
                   </div>
-                  <div className="text-left leading-tight">
-                    <div className="font-serif text-[10px] font-bold text-white">Boosts</div>
-                    <div className="font-sans text-[7px] text-white/80 font-normal mt-0.5">Metabolism</div>
+                  <div className="text-left leading-tight min-w-0">
+                    <div className="font-serif text-[9px] font-bold text-white">Supports</div>
+                    <div className="font-sans text-[6px] text-white/80 font-normal">Immunity</div>
                   </div>
                 </div>
-                <div className="flex items-center gap-1.5">
-                  <div className="w-6 h-6 rounded-full border border-[#FE8B00]/30 flex items-center justify-center text-[#FE8B00] shrink-0">
-                    <Heart className="w-3.5 h-3.5" />
+                <div className="flex items-center gap-1">
+                  <div className="w-5 h-5 rounded-full border border-[#FE8B00]/30 flex items-center justify-center text-[#FE8B00] shrink-0">
+                    <Zap className="w-3 h-3" />
                   </div>
-                  <div className="text-left leading-tight">
-                    <div className="font-serif text-[10px] font-bold text-white">Improves</div>
-                    <div className="font-sans text-[7px] text-white/80 font-normal mt-0.5">Overall Health</div>
+                  <div className="text-left leading-tight min-w-0">
+                    <div className="font-serif text-[9px] font-bold text-white">Boosts</div>
+                    <div className="font-sans text-[6px] text-white/80 font-normal">Metabolism</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-1">
+                  <div className="w-5 h-5 rounded-full border border-[#FE8B00]/30 flex items-center justify-center text-[#FE8B00] shrink-0">
+                    <Heart className="w-3 h-3" />
+                  </div>
+                  <div className="text-left leading-tight min-w-0">
+                    <div className="font-serif text-[9px] font-bold text-white">Improves</div>
+                    <div className="font-sans text-[6px] text-white/80 font-normal">Overall Health</div>
                   </div>
                 </div>
               </div>
 
               {/* Action Buttons */}
-              <div className="flex justify-center pt-3 font-sans w-full">
+              <div className="flex pt-2 font-sans">
                 <button 
                   onClick={() => navigate('/shop')}
-                  className="bg-[#FE8B00] hover:bg-white text-[#061C0D] hover:text-[#092813] px-6 py-2 rounded-full text-[11px] font-bold uppercase tracking-wider transition-all duration-300 border border-[#FE8B00] shadow-md relative z-30"
+                  className="bg-[#FE8B00] hover:bg-white text-[#061C0D] hover:text-[#092813] px-5 py-2 rounded-full text-[10px] font-bold uppercase tracking-wider transition-all duration-300 border border-[#FE8B00] shadow-md"
                 >
                   Shop Now →
                 </button>
               </div>
             </div>
 
-            {/* Right Column: Sharp Product Image */}
-            <div className="col-span-5 flex justify-end items-center relative min-h-[160px] overflow-visible z-10">
+            {/* Right Column: Product Image — contained, no overlap */}
+            <div className="col-span-5 flex justify-center items-center relative min-h-[180px] overflow-hidden">
               <img 
                 src="/assets/content/image-Photoroom%20(21).png" 
                 alt="Swavalambi Wellness Products" 
-                className="absolute right-[-45px] top-1/2 -translate-y-1/2 w-[210px] max-w-none h-auto object-contain select-none pointer-events-none filter drop-shadow-2xl z-10"
+                className="w-full max-w-[150px] h-auto object-contain select-none pointer-events-none drop-shadow-2xl"
                 style={{ imageRendering: 'auto' }}
                 loading="eager"
                 decoding="async"
